@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#080a0d" />
+  <meta name="description" content="Proposta Forward Zone para implementação, gestão de Google Ads ou Meta Ads e criação de criativos de performance para captação de cirurgiões-dentistas." />
+  <title>Forward Zone — Proposta de Aquisição Digital</title>
+  <style>
+    :root{
+      --bg:#080a0d;--bg2:#0b0f13;--card:#0f151a;--card2:#131a20;--text:#f1f4f4;--muted:#9aa7ac;
+      --line:rgba(232,241,243,.14);--line2:rgba(232,241,243,.26);--silver:#dce3e4;--silver2:#a9b8bc;
+      --red:#e12d3f;--shadow:0 28px 80px rgba(0,0,0,.38);--radius:18px;--max:1420px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;background:var(--bg)}
+    body{margin:0;background:
+      radial-gradient(850px 520px at 82% -10%,rgba(184,205,210,.12),transparent 55%),
+      radial-gradient(600px 480px at -12% 34%,rgba(119,143,150,.08),transparent 56%),
+      linear-gradient(180deg,var(--bg),#0a0d11 48%,#080a0d);
+      color:var(--text);font-family:Manrope,Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      line-height:1.5;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    button,a{ -webkit-tap-highlight-color:transparent }
+    .container{width:min(var(--max),calc(100% - 48px));margin:0 auto}
+    .grid-bg{position:absolute;inset:0;pointer-events:none;background-image:
+      linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px),
+      linear-gradient(rgba(255,255,255,.026) 1px,transparent 1px),
+      linear-gradient(118deg,transparent 0,transparent 54%,rgba(220,227,228,.08) 54.08%,transparent 54.22%);
+      background-size:78px 78px,78px 78px,100% 100%;mask-image:linear-gradient(90deg,transparent 0,#000 24%,#000 100%)}
+    .speed{position:absolute;inset:0;pointer-events:none;background:
+      linear-gradient(151deg,transparent 0,transparent 27%,rgba(255,255,255,.07) 27.08%,transparent 27.3%),
+      linear-gradient(151deg,transparent 0,transparent 58%,rgba(255,255,255,.05) 58.08%,transparent 58.22%),
+      linear-gradient(151deg,transparent 0,transparent 79%,rgba(255,255,255,.07) 79.08%,transparent 79.22%);opacity:.7}
+    .nav{position:absolute;top:0;left:0;right:0;z-index:20;padding:24px 0}
+    .nav-in{display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:13px;font-weight:850;letter-spacing:-.04em}
+    .mark{width:44px;height:44px;border:1px solid rgba(255,255,255,.18);display:grid;place-items:center;position:relative;overflow:hidden;background:rgba(255,255,255,.025)}
+    .mark:before,.mark:after{content:"";position:absolute;width:27px;height:7px;background:linear-gradient(90deg,#f6f9f9,#9cabb0);transform:skewX(-24deg);left:9px}
+    .mark:before{top:13px}.mark:after{top:24px;left:4px;width:22px}
+    .brand small{display:block;color:#7f8a8f;font-size:9px;letter-spacing:.19em;text-transform:uppercase;margin-top:1px}
+    .nav-actions{display:flex;align-items:center;gap:10px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:8px;padding:14px 18px;font-size:13px;font-weight:800;transition:.22s ease;border:1px solid transparent;cursor:pointer}
+    .btn-primary{background:var(--silver);color:#0b0e12;box-shadow:0 14px 35px rgba(220,227,228,.11)}
+    .btn-primary:hover{transform:translateY(-2px);background:#fff}
+    .btn-ghost{border-color:var(--line);color:#dce3e4;background:rgba(255,255,255,.02)}
+    .btn-ghost:hover{border-color:var(--line2);background:rgba(255,255,255,.05)}
+    .hero{min-height:880px;display:flex;align-items:flex-end;position:relative;padding:160px 0 96px;isolation:isolate;overflow:hidden}
+    .hero:after{content:"";position:absolute;right:7%;top:22%;width:11px;height:11px;border-radius:50%;background:#edf5f6;box-shadow:0 0 0 6px rgba(237,245,246,.07),0 0 40px rgba(237,245,246,.7);z-index:-1}
+    .hero-layout{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(290px,.55fr);gap:78px;align-items:end}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;color:#aeb9bd;font-size:11px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+    .eyebrow .dot{width:8px;height:8px;border-radius:50%;background:#eaf1f2;box-shadow:0 0 0 5px rgba(234,241,242,.07),0 0 20px rgba(234,241,242,.45)}
+    h1,h2,h3,p{margin-top:0}
+    h1{font-size:clamp(58px,8vw,122px);line-height:.88;letter-spacing:-.075em;margin:25px 0 32px;max-width:1040px;font-weight:900}
+    h1 span{color:var(--silver)}
+    .lead{max-width:760px;font-size:clamp(18px,2vw,23px);line-height:1.55;color:#bac4c7;letter-spacing:-.02em}
+    .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:38px}
+    .proposal-tag{margin-top:54px;display:flex;align-items:center;gap:14px;color:#758287;font-size:12px}
+    .proposal-tag:before{content:"";width:70px;height:1px;background:linear-gradient(90deg,#dae2e4,transparent);box-shadow:0 0 12px rgba(218,226,228,.35)}
+    .hero-side{border-left:1px solid var(--line2);padding-left:28px;position:relative}
+    .hero-side:before{content:"";position:absolute;left:-1px;top:0;width:1px;height:86px;background:#e7edef;box-shadow:0 0 16px rgba(231,237,239,.5)}
+    .readout{font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:#718086;margin-bottom:26px}
+    .hero-kpi{padding:21px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:70px 1fr;gap:15px;align-items:center}
+    .hero-kpi strong{font-size:34px;line-height:1;font-weight:900;letter-spacing:-.06em}
+    .hero-kpi span{font-size:13px;color:#96a3a8;line-height:1.45}
+    .strip{position:relative;margin-top:-38px;z-index:4}
+    .strip-in{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line2);background:rgba(15,21,26,.92);backdrop-filter:blur(14px);box-shadow:var(--shadow)}
+    .strip-item{padding:27px 30px;border-right:1px solid var(--line);position:relative}
+    .strip-item:last-child{border-right:0}.strip-item:before{content:"";position:absolute;top:-1px;left:22px;width:54px;height:1px;background:#e4ecee;box-shadow:0 0 10px #cfd9dc}
+    .strip-item b{display:block;font-size:25px;letter-spacing:-.05em}.strip-item span{font-size:12px;color:#7f8c91}
+    section{position:relative}
+    .section{padding:128px 0}
+    .section-head{display:grid;grid-template-columns:260px 1fr;gap:70px;margin-bottom:54px}
+    .section-index{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#78858b}.section-index b{color:#d7dfe1}
+    .section-copy h2{font-size:clamp(42px,5.3vw,78px);line-height:.95;letter-spacing:-.065em;margin:0 0 26px;font-weight:900;max-width:1060px}
+    .section-copy p{font-size:18px;line-height:1.75;color:#92a0a5;max-width:790px}
+    .panel{border:1px solid var(--line);background:linear-gradient(135deg,rgba(220,227,228,.055),transparent 31%),#0c1116;box-shadow:inset 0 1px 0 rgba(255,255,255,.035),0 24px 60px rgba(0,0,0,.22)}
+    .implementation{display:grid;grid-template-columns:.82fr 1.18fr;overflow:hidden}
+    .price-side{padding:45px;display:flex;flex-direction:column;justify-content:space-between;min-height:540px;border-right:1px solid var(--line);position:relative}
+    .price-side:before{content:"";position:absolute;left:0;top:0;width:4px;height:100%;background:linear-gradient(180deg,#dbe4e6,rgba(219,228,230,.08))}
+    .price-side .label{font-size:12px;color:#829096;letter-spacing:.13em;text-transform:uppercase}
+    .price{font-size:clamp(58px,6.6vw,95px);font-weight:900;letter-spacing:-.075em;line-height:.85;margin:18px 0 12px}.price sup{font-size:18px;letter-spacing:0;color:#9ba9ae;vertical-align:top;margin-right:8px}
+    .once{font-size:13px;color:#7f8d92}
+    .price-note{font-size:14px;color:#aeb9bd;max-width:330px;line-height:1.7;padding-top:28px;border-top:1px solid var(--line)}
+    .implementation-list{padding:45px}
+    .mini-title{font-size:12px;color:#75848a;text-transform:uppercase;letter-spacing:.13em;margin-bottom:26px}
+    .impl-item{display:grid;grid-template-columns:38px 1fr;gap:17px;padding:22px 0;border-bottom:1px solid var(--line)}
+    .impl-item:last-child{border-bottom:0}.impl-no{font-weight:900;color:#d9e1e3;font-size:12px;padding-top:3px}.impl-item b{display:block;font-size:17px;letter-spacing:-.025em;margin-bottom:4px}.impl-item p{margin:0;color:#7f8c91;font-size:13px;line-height:1.65}
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);overflow:hidden}
+    .service{background:#0d1217;padding:31px 26px;min-height:370px;transition:.25s ease;position:relative}.service:hover{background:#141b21;transform:translateY(-3px);z-index:2;box-shadow:0 25px 60px rgba(0,0,0,.35)}
+    .service-no{font-size:11px;color:#7d8a8f;letter-spacing:.14em}.service svg{width:27px;height:27px;margin:48px 0 38px;color:#dbe2e4}.service h3{font-size:20px;line-height:1.1;letter-spacing:-.045em;margin-bottom:15px}.service p{font-size:13px;line-height:1.7;color:#7f8d92}
+    .service:after{content:"";position:absolute;right:21px;top:21px;width:6px;height:6px;border-radius:50%;background:#e7edef;box-shadow:0 0 15px rgba(231,237,239,.7)}
+    .architecture{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#0c1116}
+    .architecture .container{padding:96px 0}
+    .flow{display:grid;grid-template-columns:repeat(5,1fr);gap:22px;align-items:center;margin-top:58px}.flow-step{position:relative;padding:26px;border:1px solid var(--line);background:#0b1014;min-height:155px}.flow-step:not(:last-child):after{content:"→";position:absolute;right:-22px;top:50%;transform:translate(50%,-50%);color:#627077;font-weight:900;z-index:3}.flow-step small{display:block;color:#6f7c82;font-size:10px;text-transform:uppercase;letter-spacing:.14em;margin-bottom:28px}.flow-step b{font-size:18px;letter-spacing:-.04em;line-height:1.15}.flow-step:last-child{border-color:rgba(220,227,228,.36);box-shadow:inset 0 0 0 1px rgba(220,227,228,.06),0 0 36px rgba(220,227,228,.05)}
+    .recurring{display:grid;grid-template-columns:1.05fr .95fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+    .recurring-main,.recurring-side{background:#0c1116;padding:48px}
+    .condition{display:inline-flex;padding:9px 11px;border:1px solid rgba(225,45,63,.4);color:#ff7a88;background:rgba(225,45,63,.06);font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:850;margin-bottom:34px}
+    .recurring-main h3{font-size:clamp(36px,4.4vw,64px);line-height:.95;letter-spacing:-.06em;margin-bottom:22px}.recurring-main p{color:#89979c;font-size:15px;max-width:620px;line-height:1.75}.monthly-price{font-size:clamp(42px,5vw,70px);font-weight:900;letter-spacing:-.065em;margin:30px 0 6px}.monthly-price small{font-size:16px;color:#819096;letter-spacing:0}.monthly-note{font-size:12px;color:#65737a}
+    .checklist{display:grid;gap:0}.check{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:15px 0;border-bottom:1px solid var(--line);font-size:13px;color:#aeb9bd}.check:last-child{border-bottom:0}.check span:last-child{color:#dce3e4;font-weight:900}
+    .timeline{display:grid;grid-template-columns:repeat(7,1fr);gap:0;margin-top:50px;border-top:1px solid var(--line2)}
+    .month{padding:25px 14px;border-right:1px solid var(--line);min-height:122px;position:relative}.month:first-child{border-left:1px solid var(--line)}.month:before{content:"";position:absolute;width:7px;height:7px;border-radius:50%;background:#dfe7e8;top:-4px;left:14px;box-shadow:0 0 15px rgba(223,231,232,.55)}.month small{color:#69777c;font-size:10px;text-transform:uppercase;letter-spacing:.13em}.month b{display:block;font-size:13px;line-height:1.35;margin-top:16px;color:#aeb9bd}.month:first-child b,.month:last-child b{color:#edf3f4}
+    .why{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.why-card{padding:34px;border:1px solid var(--line);background:linear-gradient(150deg,rgba(220,227,228,.035),transparent 38%),#0c1116;min-height:245px}.why-card .num{font-size:11px;color:#758188;margin-bottom:56px}.why-card h3{font-size:23px;letter-spacing:-.045em;margin-bottom:13px}.why-card p{font-size:13px;line-height:1.7;color:#7b898f}
+    .faq{max-width:980px;margin-left:auto}.faq details{border-top:1px solid var(--line);padding:24px 0}.faq details:last-child{border-bottom:1px solid var(--line)}.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;font-weight:800;letter-spacing:-.02em}.faq summary::-webkit-details-marker{display:none}.faq summary:after{content:"+";color:#849198;font-size:20px}.faq details[open] summary:after{content:"−"}.faq p{margin:16px 40px 0 0;color:#7f8d92;font-size:14px;line-height:1.75}
+    .cta{padding:120px 0 80px}.cta-box{position:relative;overflow:hidden;border:1px solid rgba(220,227,228,.26);background:linear-gradient(135deg,#dfe6e7 0%,#b8c7ca 100%);color:#0b1014;padding:65px;box-shadow:0 34px 90px rgba(0,0,0,.33)}.cta-box:before{content:"";position:absolute;inset:0;background:linear-gradient(145deg,transparent 0,transparent 62%,rgba(10,15,19,.12) 62.1%,transparent 62.4%),linear-gradient(145deg,transparent 0,transparent 76%,rgba(10,15,19,.08) 76.1%,transparent 76.3%)}
+    .cta-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.2fr .5fr;gap:60px;align-items:end}.cta-box .eyebrow{color:#253138}.cta-box .eyebrow .dot{background:#141c20;box-shadow:none}.cta h2{font-size:clamp(46px,6vw,82px);line-height:.9;letter-spacing:-.07em;margin:24px 0 0;max-width:930px}.cta-actions{display:flex;flex-direction:column;gap:10px}.cta .btn-primary{background:#0b1014;color:#eef3f4}.cta .btn-primary:hover{background:#151e23}.cta .btn-ghost{border-color:rgba(10,15,19,.22);color:#1d282e;background:rgba(255,255,255,.12)}
+    footer{padding:10px 0 42px;color:#637077;font-size:11px}.footer-in{display:flex;justify-content:space-between;gap:30px;border-top:1px solid var(--line);padding-top:24px}.footer-brand{color:#aeb9bd;font-weight:850}
+    .mobile-only{display:none}
+    @media (max-width:1080px){
+      .hero-layout{grid-template-columns:1fr;gap:50px}.hero-side{max-width:640px}.strip-in{grid-template-columns:repeat(2,1fr)}.strip-item:nth-child(2){border-right:0}.strip-item:nth-child(-n+2){border-bottom:1px solid var(--line)}
+      .services{grid-template-columns:repeat(3,1fr)}.service:last-child{grid-column:auto}.implementation,.recurring{grid-template-columns:1fr}.price-side{border-right:0;border-bottom:1px solid var(--line)}.flow{grid-template-columns:1fr}.flow-step:not(:last-child):after{content:"↓";right:auto;left:50%;top:auto;bottom:-23px;transform:translate(-50%,50%)}.why{grid-template-columns:1fr}.timeline{grid-template-columns:repeat(4,1fr)}.month:nth-child(4){border-right:0}.month:nth-child(n+5){border-top:1px solid var(--line)}
+      .cta-inner{grid-template-columns:1fr}.cta-actions{max-width:360px}
+    }
+    @media (max-width:720px){
+      .container{width:min(100% - 28px,var(--max))}.nav{padding:16px 0}.brand small{display:none}.nav .btn-ghost{display:none}.btn{padding:13px 15px}.hero{min-height:auto;padding:138px 0 72px}.hero h1{font-size:clamp(52px,17vw,76px)}.lead{font-size:17px}.hero-side{display:none}.strip{margin-top:-12px}.strip-in{grid-template-columns:1fr 1fr}.strip-item{padding:21px 18px}.strip-item b{font-size:20px}.section{padding:88px 0}.section-head{grid-template-columns:1fr;gap:20px;margin-bottom:36px}.section-copy h2{font-size:clamp(38px,12vw,58px)}.section-copy p{font-size:16px}.price-side,.implementation-list,.recurring-main,.recurring-side{padding:30px 24px}.price-side{min-height:430px}.price{font-size:64px}.services{grid-template-columns:1fr}.service,.service:last-child{grid-column:auto;min-height:300px}.service svg{margin:35px 0 26px}.architecture .container{padding:72px 0}.timeline{grid-template-columns:1fr 1fr}.month:nth-child(n){border-top:1px solid var(--line);border-right:1px solid var(--line)}.month:nth-child(odd){border-left:1px solid var(--line)}.cta{padding-top:80px}.cta-box{padding:38px 24px}.cta h2{font-size:48px}.footer-in{flex-direction:column}.mobile-only{display:inline-flex}
+    }
+    @media print{.nav,.hero-cta,.cta-actions,.print-hide{display:none!important}.hero{min-height:auto;padding-top:50px}.strip{margin-top:0}.section,.cta{padding:50px 0}.panel,.service,.why-card,.flow-step{break-inside:avoid}.cta-box{background:#ddd!important;color:#111!important;box-shadow:none}}
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-in">
+      <a class="brand" href="#inicio" aria-label="Forward Zone">
+        <span class="mark" aria-hidden="true"></span>
+        <span>Forward Zone<small>growth operations</small></span>
+      </a>
+      <div class="nav-actions">
+        <button class="btn btn-ghost" type="button" onclick="window.print()">Imprimir proposta</button>
+        <a class="btn btn-primary" href="https://traktcrm.com.br/f/waf-igke-aim" target="_blank" rel="noreferrer">Avançar com a proposta <span>↗</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="grid-bg"></div><div class="speed"></div>
+      <div class="container hero-layout">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> proposta comercial • marketing para odontologia</div>
+          <h1>Transforme técnica em <span>novos clientes.</span></h1>
+          <p class="lead">Uma operação de aquisição para captar cirurgiões-dentistas através de tráfego pago, criativos de performance e otimização contínua — utilizando Google Ads ou Meta Ads, conforme a estratégia escolhida.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#investimento">Ver investimento <span>↓</span></a>
+            <a class="btn btn-ghost" href="#operacao">Conhecer a operação</a>
+          </div>
+          <div class="proposal-tag">Preparado pela Forward Zone <span id="client-inline"></span></div>
+        </div>
+        <aside class="hero-side">
+          <div class="readout">Sistema de aquisição / configuração</div>
+          <div class="hero-kpi"><strong>01</strong><span>implementação estratégica e estrutura de captação</span></div>
+          <div class="hero-kpi"><strong>03</strong><span>frentes integradas: mídia, criativos e otimização</span></div>
+          <div class="hero-kpi"><strong>06</strong><span>meses em condição comercial especial</span></div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="strip">
+      <div class="container strip-in">
+        <div class="strip-item"><b>Google ou Meta</b><span>um canal de mídia por contrato</span></div>
+        <div class="strip-item"><b>5 criativos</b><span>para anúncios todos os meses</span></div>
+        <div class="strip-item"><b>Roteiros</b><span>para criativos em vídeo</span></div>
+        <div class="strip-item"><b>Otimização</b><span>foco em oportunidade comercial</span></div>
+      </div>
+    </div>
+
+    <section class="section" id="implementacao">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-index"><b>01</b> / implementação</div>
+          <div class="section-copy">
+            <h2>Antes de anunciar, construímos a estrutura que faz o marketing funcionar.</h2>
+            <p>A implementação organiza posicionamento, público, canal de mídia, criativos, páginas de captura, CRM e mensuração. É a fundação do sistema — feita uma única vez para sustentar toda a operação recorrente.</p>
+          </div>
+        </div>
+
+        <div class="panel implementation">
+          <div class="price-side">
+            <div>
+              <div class="label">investimento de implementação</div>
+              <div class="price"><sup>R$</sup>2.250</div>
+              <div class="once">taxa única na contratação</div>
+            </div>
+            <div class="price-note">Não é uma taxa administrativa. É a construção da base estratégica, técnica e operacional — incluindo páginas de captura e CRM integrado — que será usada durante toda a parceria.</div>
+          </div>
+          <div class="implementation-list">
+            <div class="mini-title">setup forward / escopo inicial</div>
+            <div class="impl-item"><div class="impl-no">01</div><div><b>Estratégia de posicionamento</b><p>Definição dos diferenciais, argumentos e percepção que queremos construir no mercado.</p></div></div>
+            <div class="impl-item"><div class="impl-no">02</div><div><b>Mapeamento de público</b><p>Perfis de dentistas prioritários, dores, objeções e fatores que influenciam contratação.</p></div></div>
+            <div class="impl-item"><div class="impl-no">03</div><div><b>Arquitetura de campanha</b><p>Estruturação completa do canal escolhido: <strong>Google Ads ou Meta Ads</strong>, de acordo com a estratégia de aquisição definida.</p></div></div>
+            <div class="impl-item"><div class="impl-no">04</div><div><b>Direção de criativos</b><p>Definição dos ângulos, ofertas, mensagens e formatos que orientarão os anúncios durante a operação.</p></div></div>
+            <div class="impl-item"><div class="impl-no">05</div><div><b>Páginas de captura</b><p>Criação das páginas necessárias para transformar o tráfego das campanhas em leads e oportunidades comerciais.</p></div></div>
+            <div class="impl-item"><div class="impl-no">06</div><div><b>CRM integrado</b><p>Integração dos leads captados ao CRM para centralizar contatos, organizar etapas comerciais e facilitar o acompanhamento das oportunidades.</p></div></div>
+            <div class="impl-item"><div class="impl-no">07</div><div><b>Mensuração e rota de captação</b><p>Configuração do caminho entre anúncio, página, CRM e oportunidade comercial para permitir leitura e otimização da aquisição.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="operacao">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-index"><b>02</b> / operação mensal</div>
+          <div class="section-copy">
+            <h2>Uma operação focada em mídia e performance, sem gestão de redes sociais.</h2>
+            <p>A mensalidade concentra o investimento no que será usado diretamente para aquisição: gestão de um canal de mídia, produção de criativos para anúncios e roteirização de anúncios em vídeo.</p>
+          </div>
+        </div>
+
+        <div class="services">
+          <article class="service">
+            <div class="service-no">01 / mídia</div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 17 10 11l4 4 6-8"/><path d="M16 7h4v4"/></svg>
+            <h3>Google Ads <span style="color:#6f7c82">ou</span> Meta Ads</h3><p>Gestão de <strong>um canal por contrato</strong>. A escolha é feita conforme objetivo, perfil do público e estratégia de aquisição: intenção de busca no Google ou geração de demanda no Meta.</p>
+          </article>
+          <article class="service">
+            <div class="service-no">02 / criativos</div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="m7 16 3-3 2 2 2-2 3 3"/><circle cx="9" cy="9" r="1"/></svg>
+            <h3>5 criativos / mês</h3><p>Criação mensal de cinco peças direcionadas exclusivamente para anúncios, desenvolvidas a partir dos ângulos e mensagens definidos pela estratégia de performance.</p>
+          </article>
+          <article class="service">
+            <div class="service-no">03 / vídeo</div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h14v16H5z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+            <h3>Roteiros para anúncios em vídeo</h3><p>Roteirização de criativos em vídeo com gancho, desenvolvimento, prova e CTA para o cliente gravar. <strong>Não inclui gestão de redes sociais nem edição de vídeo.</strong></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="architecture">
+      <div class="container">
+        <div class="eyebrow"><span class="dot"></span> arquitetura da aquisição</div>
+        <div class="section-copy" style="margin-top:25px"><h2 style="max-width:980px">Tráfego pago deixa de ser “impulsionar anúncio” e passa a funcionar como sistema de aquisição.</h2></div>
+        <div class="flow">
+          <div class="flow-step"><small>01 / atenção</small><b>Anúncio ou pesquisa</b></div>
+          <div class="flow-step"><small>02 / mensagem</small><b>Criativo de anúncio</b></div>
+          <div class="flow-step"><small>03 / interesse</small><b>Oferta e diferenciação</b></div>
+          <div class="flow-step"><small>04 / ação</small><b>Contato comercial</b></div>
+          <div class="flow-step"><small>05 / objetivo</small><b>Novo cliente dentista</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="investimento">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-index"><b>03</b> / investimento</div>
+          <div class="section-copy">
+            <h2>Contrato de 6 meses com mensalidade fixa de R$ 900,00.</h2>
+            <p>Após a implementação, a operação segue por seis meses consecutivos para permitir aprendizado de campanha, otimização e evolução dos criativos com base em dados reais.</p>
+          </div>
+        </div>
+
+        <div class="recurring">
+          <div class="recurring-main">
+            <div class="condition">contrato de 6 meses • valor mensal fixo</div>
+            <h3>Gestão de tráfego + criativos de performance.</h3>
+            <p>Durante os 6 meses de contrato, operamos <strong>Google Ads ou Meta Ads</strong> — um dos canais — e entregamos os materiais criativos necessários para alimentar as campanhas.</p>
+            <div class="monthly-price" id="monthly-price">R$ 900,00 <small>/ mês</small></div>
+            <div class="monthly-note">A verba de mídia do canal escolhido é paga diretamente pelo cliente à plataforma e não está incluída na mensalidade de R$ 900,00.</div>
+          </div>
+          <div class="recurring-side">
+            <div class="mini-title">incluído na operação</div>
+            <div class="checklist">
+              <div class="check"><span>Gestão de Google Ads <strong>ou</strong> Meta Ads</span><span>✓</span></div>
+              <div class="check"><span>5 criativos para anúncios / mês</span><span>✓</span></div>
+              <div class="check"><span>Roteirização de criativos em vídeo</span><span>✓</span></div>
+              <div class="check"><span>Monitoramento e otimização das campanhas</span><span>✓</span></div>
+              <div class="check"><span>Análise de métricas e direcionamento</span><span>✓</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <div class="month"><small>setup</small><b>Estratégia e configuração</b></div>
+          <div class="month"><small>mês 01</small><b>Ativação e primeiros sinais</b></div>
+          <div class="month"><small>mês 02</small><b>Leitura de audiência</b></div>
+          <div class="month"><small>mês 03</small><b>Otimização de aquisição</b></div>
+          <div class="month"><small>mês 04</small><b>Escala do que performa</b></div>
+          <div class="month"><small>mês 05</small><b>Renovação de criativos</b></div>
+          <div class="month"><small>mês 06</small><b>Consolidação e próximo ciclo</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-index"><b>04</b> / princípio</div>
+          <div class="section-copy"><h2>A qualidade do laboratório precisa ser compreendida antes de ser escolhida.</h2></div>
+        </div>
+        <div class="why">
+          <div class="why-card"><div class="num">01 / encontrado</div><h3>Presença no momento certo</h3><p>Quando Google Ads for o canal escolhido, posicionamos a empresa diante de quem já está procurando e possui intenção ativa.</p></div>
+          <div class="why-card"><div class="num">02 / percebido</div><h3>Autoridade antes do contato</h3><p>Quando Meta Ads for o canal escolhido, os criativos trabalham atenção, diferenciação e geração de demanda.</p></div>
+          <div class="why-card"><div class="num">03 / escolhido</div><h3>Marketing conectado ao comercial</h3><p>A operação é construída para gerar conversas e oportunidades, não apenas números de vaidade.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:40px">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-index"><b>05</b> / dúvidas</div>
+          <div class="section-copy"><h2>O que precisa estar claro antes de começar.</h2></div>
+        </div>
+        <div class="faq">
+          <details><summary>O investimento em anúncios está incluso?</summary><p>Não. A verba de mídia do <strong>Google Ads ou Meta Ads</strong> é definida separadamente e paga diretamente pelo cliente à plataforma.</p></details>
+          <details><summary>A implementação de R$ 2.250,00 é cobrada todos os meses?</summary><p>Não. A implementação é uma cobrança única realizada no início do projeto para estruturar estratégia, canal de mídia, criativos, páginas de captura, CRM integrado, rota de captação e mensuração.</p></details>
+          <details><summary>A mensalidade inclui gestão de redes sociais?</summary><p>Não. A proposta não inclui calendário editorial, postagem, community management ou gestão do perfil. A operação mensal é dedicada exclusivamente à mídia paga e aos criativos usados nas campanhas.</p></details>
+          <details><summary>Como funcionam os criativos em vídeo?</summary><p>A Forward Zone entrega a <strong>roteirização dos anúncios em vídeo</strong>, com gancho, desenvolvimento e chamada para ação. A gravação é realizada pelo cliente. Edição de vídeo não está incluída nesta mensalidade.</p></details>
+          <details><summary>O contrato possui qual duração?</summary><p>A proposta prevê <strong>6 meses de contrato</strong>, com mensalidade de <strong>R$ 900,00</strong> durante todo o período. Ao final, a continuidade pode ser renegociada conforme a evolução da operação.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="cta-box">
+          <div class="cta-inner">
+            <div>
+              <div class="eyebrow"><span class="dot"></span> forward zone / próxima etapa</div>
+              <h2>Transformar qualidade técnica em presença, autoridade e aquisição.</h2>
+            </div>
+            <div class="cta-actions">
+              <a class="btn btn-primary" href="https://traktcrm.com.br/f/waf-igke-aim" target="_blank" rel="noreferrer">Quero avançar <span>↗</span></a>
+              <button class="btn btn-ghost" type="button" onclick="window.print()">Salvar esta proposta em PDF</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-in">
+      <div><span class="footer-brand">Forward Zone</span> — estratégia, autoridade, aquisição e crescimento.</div>
+      <div>Proposta comercial • <span id="current-year"></span></div>
+    </div>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(location.search);
+    const client = params.get('cliente');
+    if(client){
+      document.getElementById('client-inline').textContent = '• ' + client;
+      document.title = 'Proposta Forward Zone — ' + client;
+    }
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
