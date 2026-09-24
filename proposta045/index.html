@@ -138,24 +138,24 @@ footer{padding:30px 0 42px;color:#637076;font-size:11px}.footer-in{display:flex;
 <section class="section">
 <div class="container">
 <div class="section-title">
-<div class="index"><b>02</b> / financeiro</div>
-<h2>Composição do investimento e saldo restante.</h2>
+<div class="index"><b>02</b> / adicional</div>
+<h2>Itens adicionados e saldo restante.</h2>
 </div>
 
 <div class="finance">
 <div class="breakdown">
-<div class="label">composição do valor total</div>
-<div class="money-row"><span>Estrutura original aprovada</span><strong>R$ 4.100,00</strong></div>
-<div class="money-row"><span>20 fones adicionais</span><strong>R$ 1.750,00</strong></div>
+<div class="label">itens adicionados à proposta</div>
+<div class="money-row"><span>+20 fones sem fio adicionais</span><strong>R$ 1.750,00</strong></div>
 <div class="money-row"><span>Microfone sem fio UHF Sennheiser — 1 diária</span><strong>R$ 180,00</strong></div>
-<div class="total"><span>VALOR TOTAL ATUALIZADO</span><strong>R$ 6.030,00</strong></div>
 </div>
 
 <div class="balance">
-<div class="label">situação de pagamento</div>
-<div class="paid ok"><small>valor já pago pelo cliente</small><strong>R$ 3.731,00</strong></div>
-<div class="paid"><small>valor total da proposta</small><strong>R$ 6.030,00</strong></div>
-<div class="remaining"><small>SALDO RESTANTE A PAGAR</small><strong>R$ 2.299,00</strong></div>
+<div class="label">saldo restante</div>
+<div class="remaining" style="margin-top:0">
+<small>VALOR RESTANTE A PAGAR</small>
+<strong>R$ 2.299,00</strong>
+</div>
+<div class="note">Este é o saldo final restante após considerar os pagamentos já realizados e os adicionais incluídos nesta atualização.</div>
 </div>
 </div>
 </div>
@@ -169,7 +169,7 @@ footer{padding:30px 0 42px;color:#637076;font-size:11px}.footer-in{display:flex;
 </div>
 
 <div class="accept-wrap">
-<p class="lead" style="font-size:16px;margin-bottom:20px">Ao clicar em <strong>Aceitar e finalizar</strong>, o cliente confirma o aceite integral da Proposta 045, no valor total atualizado de <strong>R$ 6.030,00</strong>, reconhecendo o valor já pago de <strong>R$ 3.731,00</strong> e o saldo restante de <strong>R$ 2.299,00</strong>.</p>
+<p class="lead" style="font-size:16px;margin-bottom:20px">Ao clicar em <strong>Aceitar e finalizar</strong>, o cliente confirma o aceite dos adicionais desta atualização: <strong>+20 fones por R$ 1.750,00</strong> e <strong>microfone sem fio UHF Sennheiser por R$ 180,00/dia</strong>, reconhecendo o <strong>saldo restante de R$ 2.299,00</strong>.</p>
 
 <div class="accept-actions">
 <button id="acceptBtn" class="btn btn-primary" type="button">Aceitar e finalizar</button>
@@ -213,8 +213,8 @@ btn.addEventListener('click',async()=>{
     '_template':'table',
     'Status':'PROPOSTA ACEITA',
     'Proposta':'045 — Palestra Silenciosa',
-    'Valor total':'R$ 6.030,00',
-    'Valor já pago':'R$ 3.731,00',
+    'Adicional — 20 fones':'R$ 1.750,00',
+    'Adicional — Microfone UHF Sennheiser':'R$ 180,00 / dia',
     'Saldo restante':'R$ 2.299,00',
     'Data e hora do aceite':dataAceite,
     'Declaração':'Cliente aceitou e finalizou a Proposta 045 pelos valores apresentados.',
@@ -233,7 +233,7 @@ btn.addEventListener('click',async()=>{
     statusEl.className='status ok';
     statusEl.textContent='Proposta aceita e finalizada.';
     receipt.classList.add('show');
-    receiptText.textContent='Aceite registrado em '+dataAceite+'. Saldo reconhecido: R$ 2.299,00.';
+    receiptText.textContent='Aceite registrado em '+dataAceite+'. Saldo restante: R$ 2.299,00.';
     btn.textContent='Proposta finalizada';
   }catch(err){
     statusEl.className='status error';
