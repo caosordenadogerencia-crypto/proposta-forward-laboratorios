@@ -169,32 +169,12 @@ footer{padding:30px 0 42px;color:#637076;font-size:11px}.footer-in{display:flex;
 </div>
 
 <div class="accept-wrap">
-<form id="acceptForm">
-<div class="accept-grid">
-<div class="field">
-<label for="nome">Nome completo</label>
-<input id="nome" name="Nome do cliente" type="text" required autocomplete="name">
-</div>
-<div class="field">
-<label for="empresa">Empresa</label>
-<input id="empresa" name="Empresa" type="text" required autocomplete="organization">
-</div>
-<div class="field full">
-<label for="email">E-mail</label>
-<input id="email" name="E-mail do cliente" type="email" required autocomplete="email">
-</div>
-</div>
-
-<label class="consent">
-<input id="concordancia" type="checkbox" required>
-<span>Declaro que li e aceito a <strong>Proposta 045 — Palestra Silenciosa</strong>, no valor total atualizado de <strong>R$ 6.030,00</strong>, reconhecendo o valor já pago de <strong>R$ 3.731,00</strong> e o saldo restante de <strong>R$ 2.299,00</strong>.</span>
-</label>
+<p class="lead" style="font-size:16px;margin-bottom:20px">Ao clicar em <strong>Aceitar e finalizar</strong>, o cliente confirma o aceite integral da Proposta 045, no valor total atualizado de <strong>R$ 6.030,00</strong>, reconhecendo o valor já pago de <strong>R$ 3.731,00</strong> e o saldo restante de <strong>R$ 2.299,00</strong>.</p>
 
 <div class="accept-actions">
-<button id="acceptBtn" class="btn btn-primary" type="submit">Aceitar e finalizar</button>
+<button id="acceptBtn" class="btn btn-primary" type="button">Aceitar e finalizar</button>
 <span id="status" class="status">A confirmação será enviada à Forward Zone.</span>
 </div>
-</form>
 
 <div id="receipt" class="receipt">
 <b>Proposta aceita com sucesso.</b>
@@ -215,24 +195,17 @@ footer{padding:30px 0 42px;color:#637076;font-size:11px}.footer-in{display:flex;
 <script>
 document.getElementById('year').textContent=new Date().getFullYear();
 
-const form=document.getElementById('acceptForm');
 const btn=document.getElementById('acceptBtn');
 const statusEl=document.getElementById('status');
 const receipt=document.getElementById('receipt');
 const receiptText=document.getElementById('receiptText');
 
-form.addEventListener('submit',async(e)=>{
-  e.preventDefault();
-  if(!form.reportValidity()) return;
-
+btn.addEventListener('click',async()=>{
   btn.disabled=true;
-  btn.textContent='Enviando aceite...';
+  btn.textContent='Finalizando...';
   statusEl.className='status';
   statusEl.textContent='Registrando o aceite da proposta...';
 
-  const nome=document.getElementById('nome').value.trim();
-  const empresa=document.getElementById('empresa').value.trim();
-  const email=document.getElementById('email').value.trim();
   const dataAceite=new Date().toLocaleString('pt-BR',{dateStyle:'full',timeStyle:'medium'});
 
   const payload={
@@ -240,15 +213,11 @@ form.addEventListener('submit',async(e)=>{
     '_template':'table',
     'Status':'PROPOSTA ACEITA',
     'Proposta':'045 — Palestra Silenciosa',
-    'Nome do cliente':nome,
-    'Empresa':empresa,
-    'E-mail do cliente':email,
     'Valor total':'R$ 6.030,00',
     'Valor já pago':'R$ 3.731,00',
     'Saldo restante':'R$ 2.299,00',
     'Data e hora do aceite':dataAceite,
-    'Declaração':'Cliente declarou que leu e aceitou os valores e condições apresentados na Proposta 045.',
-    '_replyto':email,
+    'Declaração':'Cliente aceitou e finalizou a Proposta 045 pelos valores apresentados.',
     '_honey':''
   };
 
@@ -262,10 +231,10 @@ form.addEventListener('submit',async(e)=>{
     if(!res.ok || data.success===false) throw new Error(data.message||'Falha no envio');
 
     statusEl.className='status ok';
-    statusEl.textContent='Aceite registrado e confirmação enviada.';
+    statusEl.textContent='Proposta aceita e finalizada.';
     receipt.classList.add('show');
-    receiptText.textContent=nome+' — '+empresa+' — '+dataAceite+'. Saldo reconhecido: R$ 2.299,00.';
-    btn.textContent='Proposta aceita';
+    receiptText.textContent='Aceite registrado em '+dataAceite+'. Saldo reconhecido: R$ 2.299,00.';
+    btn.textContent='Proposta finalizada';
   }catch(err){
     statusEl.className='status error';
     statusEl.textContent='Não foi possível enviar a confirmação agora. Tente novamente.';
