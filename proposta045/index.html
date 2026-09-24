@@ -10,10 +10,10 @@
 :root{
   --bg:#07090c;--panel:#0d1217;--panel2:#111820;--text:#f3f6f7;--muted:#8b989e;
   --line:rgba(235,243,245,.13);--line2:rgba(235,243,245,.26);--silver:#dce4e6;
-  --green:#9bd8b3;--max:1280px
+  --green:#9bd8b3;--red:#ff7d89;--max:1280px
 }
 *{box-sizing:border-box}
-html{background:var(--bg)}
+html{background:var(--bg);scroll-behavior:smooth}
 body{margin:0;color:var(--text);font-family:Manrope,Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:
 radial-gradient(900px 560px at 82% -8%,rgba(181,205,212,.13),transparent 58%),
 linear-gradient(180deg,#07090c,#0a0e12 50%,#07090c);line-height:1.5}
@@ -26,6 +26,8 @@ linear-gradient(180deg,#07090c,#0a0e12 50%,#07090c);line-height:1.5}
 .mark:before{top:12px;width:26px}.mark:after{top:23px;left:4px;width:21px}
 .brand small{display:block;color:#718086;font-size:9px;letter-spacing:.18em;text-transform:uppercase}
 .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 17px;border-radius:8px;font-size:13px;font-weight:850;border:1px solid var(--line2);background:rgba(255,255,255,.025);color:#fff;cursor:pointer}
+.btn-primary{background:var(--silver);color:#091014;border-color:transparent}
+.btn:disabled{opacity:.55;cursor:not-allowed}
 .hero{padding:95px 0 70px}
 .eyebrow{font-size:11px;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:#aeb9bd}
 h1,h2,h3,p{margin-top:0}
@@ -62,11 +64,25 @@ h1 span{color:var(--silver)}
 .balance .ok strong{color:var(--green)}
 .balance .remaining{margin-top:18px;padding:24px;border:1px solid rgba(220,228,230,.3);background:linear-gradient(135deg,rgba(220,228,230,.09),rgba(220,228,230,.025))}
 .balance .remaining strong{font-size:54px;color:#fff}
+.accept-wrap{border:1px solid var(--line2);background:linear-gradient(145deg,rgba(220,228,230,.055),transparent 40%),#0c1116;padding:40px}
+.accept-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field{display:flex;flex-direction:column;gap:8px}
+.field.full{grid-column:1/-1}
+.field label{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:#7f8d92;font-weight:800}
+.field input{width:100%;border:1px solid var(--line2);background:#080d11;color:#f4f7f8;border-radius:8px;padding:15px 14px;font:inherit;outline:none}
+.field input:focus{border-color:#dce4e6}
+.consent{display:flex;gap:12px;align-items:flex-start;padding:18px 0;color:#aeb5b8;font-size:13px;line-height:1.55}
+.consent input{margin-top:3px;accent-color:#dce4e6}
+.accept-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:10px}
+.status{font-size:13px;color:#8b989e}
+.status.ok{color:var(--green)}.status.error{color:var(--red)}
+.receipt{display:none;margin-top:22px;padding:22px;border:1px solid rgba(155,216,179,.35);background:rgba(155,216,179,.06)}
+.receipt.show{display:block}.receipt b{color:var(--green)}
 .note{margin-top:18px;color:#7f8d92;font-size:12px;line-height:1.65}
 footer{padding:30px 0 42px;color:#637076;font-size:11px}.footer-in{display:flex;justify-content:space-between;gap:25px;border-top:1px solid var(--line);padding-top:22px}
-@media(max-width:900px){.summary{grid-template-columns:1fr}.section-title{grid-template-columns:1fr;gap:12px}.finance{grid-template-columns:1fr}}
-@media(max-width:650px){.container{width:calc(100% - 28px)}.nav-in{align-items:flex-start}.brand small{display:none}.hero{padding:70px 0 52px}h1{font-size:clamp(48px,16vw,72px)}.scope-row{grid-template-columns:38px 1fr}.scope-value{grid-column:2}.breakdown,.balance{padding:26px 22px}.total{align-items:flex-start;flex-direction:column}.balance .remaining strong{font-size:46px}.footer-in{flex-direction:column}}
-@media print{.nav .btn{display:none}.hero{padding-top:45px}.section{padding:42px 0}.scope-row,.breakdown,.balance{break-inside:avoid}}
+@media(max-width:900px){.summary{grid-template-columns:1fr}.section-title{grid-template-columns:1fr;gap:12px}.finance{grid-template-columns:1fr}.accept-grid{grid-template-columns:1fr}.field.full{grid-column:auto}}
+@media(max-width:650px){.container{width:calc(100% - 28px)}.nav-in{align-items:flex-start}.brand small{display:none}.hero{padding:70px 0 52px}h1{font-size:clamp(48px,16vw,72px)}.scope-row{grid-template-columns:38px 1fr}.scope-value{grid-column:2}.breakdown,.balance,.accept-wrap{padding:26px 22px}.total{align-items:flex-start;flex-direction:column}.balance .remaining strong{font-size:46px}.footer-in{flex-direction:column}}
+@media print{.nav .btn,.accept-actions{display:none}.hero{padding-top:45px}.section{padding:42px 0}.scope-row,.breakdown,.balance,.accept-wrap{break-inside:avoid}}
 </style>
 </head>
 <body>
@@ -140,7 +156,49 @@ footer{padding:30px 0 42px;color:#637076;font-size:11px}.footer-in{display:flex;
 <div class="paid ok"><small>valor já pago pelo cliente</small><strong>R$ 3.731,00</strong></div>
 <div class="paid"><small>valor total da proposta</small><strong>R$ 6.030,00</strong></div>
 <div class="remaining"><small>SALDO RESTANTE A PAGAR</small><strong>R$ 2.299,00</strong></div>
-<div class="note">O valor já pago corresponde à diferença entre o total atualizado da proposta e o saldo pendente informado.</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" id="aceite">
+<div class="container">
+<div class="section-title">
+<div class="index"><b>03</b> / aceite</div>
+<h2>Aceitar e finalizar a Proposta 045.</h2>
+</div>
+
+<div class="accept-wrap">
+<form id="acceptForm">
+<div class="accept-grid">
+<div class="field">
+<label for="nome">Nome completo</label>
+<input id="nome" name="Nome do cliente" type="text" required autocomplete="name">
+</div>
+<div class="field">
+<label for="empresa">Empresa</label>
+<input id="empresa" name="Empresa" type="text" required autocomplete="organization">
+</div>
+<div class="field full">
+<label for="email">E-mail</label>
+<input id="email" name="E-mail do cliente" type="email" required autocomplete="email">
+</div>
+</div>
+
+<label class="consent">
+<input id="concordancia" type="checkbox" required>
+<span>Declaro que li e aceito a <strong>Proposta 045 — Palestra Silenciosa</strong>, no valor total atualizado de <strong>R$ 6.030,00</strong>, reconhecendo o valor já pago de <strong>R$ 3.731,00</strong> e o saldo restante de <strong>R$ 2.299,00</strong>.</span>
+</label>
+
+<div class="accept-actions">
+<button id="acceptBtn" class="btn btn-primary" type="submit">Aceitar e finalizar</button>
+<span id="status" class="status">A confirmação será enviada à Forward Zone.</span>
+</div>
+</form>
+
+<div id="receipt" class="receipt">
+<b>Proposta aceita com sucesso.</b>
+<div id="receiptText" class="note"></div>
 </div>
 </div>
 </div>
@@ -153,6 +211,68 @@ footer{padding:30px 0 42px;color:#637076;font-size:11px}.footer-in{display:flex;
 <div>Palestra Silenciosa • <span id="year"></span></div>
 </div>
 </footer>
-<script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+
+const form=document.getElementById('acceptForm');
+const btn=document.getElementById('acceptBtn');
+const statusEl=document.getElementById('status');
+const receipt=document.getElementById('receipt');
+const receiptText=document.getElementById('receiptText');
+
+form.addEventListener('submit',async(e)=>{
+  e.preventDefault();
+  if(!form.reportValidity()) return;
+
+  btn.disabled=true;
+  btn.textContent='Enviando aceite...';
+  statusEl.className='status';
+  statusEl.textContent='Registrando o aceite da proposta...';
+
+  const nome=document.getElementById('nome').value.trim();
+  const empresa=document.getElementById('empresa').value.trim();
+  const email=document.getElementById('email').value.trim();
+  const dataAceite=new Date().toLocaleString('pt-BR',{dateStyle:'full',timeStyle:'medium'});
+
+  const payload={
+    '_subject':'PROPOSTA 045 ACEITA — Palestra Silenciosa',
+    '_template':'table',
+    'Status':'PROPOSTA ACEITA',
+    'Proposta':'045 — Palestra Silenciosa',
+    'Nome do cliente':nome,
+    'Empresa':empresa,
+    'E-mail do cliente':email,
+    'Valor total':'R$ 6.030,00',
+    'Valor já pago':'R$ 3.731,00',
+    'Saldo restante':'R$ 2.299,00',
+    'Data e hora do aceite':dataAceite,
+    'Declaração':'Cliente declarou que leu e aceitou os valores e condições apresentados na Proposta 045.',
+    '_replyto':email,
+    '_honey':''
+  };
+
+  try{
+    const res=await fetch('https://formsubmit.co/ajax/portraithunterphoto@gmail.com',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify(payload)
+    });
+    const data=await res.json();
+    if(!res.ok || data.success===false) throw new Error(data.message||'Falha no envio');
+
+    statusEl.className='status ok';
+    statusEl.textContent='Aceite registrado e confirmação enviada.';
+    receipt.classList.add('show');
+    receiptText.textContent=nome+' — '+empresa+' — '+dataAceite+'. Saldo reconhecido: R$ 2.299,00.';
+    btn.textContent='Proposta aceita';
+  }catch(err){
+    statusEl.className='status error';
+    statusEl.textContent='Não foi possível enviar a confirmação agora. Tente novamente.';
+    btn.disabled=false;
+    btn.textContent='Aceitar e finalizar';
+  }
+});
+</script>
 </body>
 </html>
