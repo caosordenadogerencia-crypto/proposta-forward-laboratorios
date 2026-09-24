@@ -112,7 +112,7 @@ footer{padding:30px 0 42px;color:#637076;font-size:11px}
 <div class="summary">
 <div class="summary-card"><small>presença</small><b>3 dias de evento</b></div>
 <div class="summary-card"><small>pacote fechado</small><b>R$ 15.000,00</b></div>
-<div class="summary-card"><small>adicional pendente</small><b>R$ 1.930,00</b></div>
+<div class="summary-card"><small>adicional pendente</small><b>R$ 2.290,00</b></div>
 </div>
 </div>
 </section>
@@ -219,14 +219,14 @@ footer{padding:30px 0 42px;color:#637076;font-size:11px}
 <div class="add-list">
 <div class="label">itens adicionais</div>
 <div class="money-row"><span>+20 fones sem fio adicionais</span><strong>R$ 1.750,00</strong></div>
-<div class="money-row"><span>+1 microfone bastão sem fio UHF Sennheiser</span><strong>R$ 180,00</strong></div>
+<div class="money-row"><span>+1 microfone bastão sem fio UHF Sennheiser</span><strong>R$ 540,00</strong></div>
 </div>
 
 <div class="balance">
 <div class="label">valor adicional pendente</div>
 <div class="remaining">
 <small>ADICIONAL A PAGAR</small>
-<strong>R$ 1.930,00</strong>
+<strong>R$ 2.290,00</strong>
 </div>
 <div class="note">Este valor refere-se exclusivamente aos itens adicionados após o fechamento do pacote principal de R$ 15.000,00.</div>
 </div>
@@ -242,7 +242,7 @@ footer{padding:30px 0 42px;color:#637076;font-size:11px}
 </div>
 
 <div class="accept-wrap">
-<p>Ao clicar em <strong>Aceitar e finalizar</strong>, o cliente confirma o escopo do pacote principal de <strong>R$ 15.000,00</strong> e o aceite dos adicionais de <strong>20 fones por R$ 1.750,00</strong> e <strong>1 microfone bastão sem fio UHF Sennheiser por R$ 180,00</strong>, totalizando <strong>R$ 1.930,00 de adicional pendente</strong>.</p>
+<p>Ao clicar em <strong>Aceitar e finalizar</strong>, o cliente confirma o escopo do pacote principal de <strong>R$ 15.000,00</strong> e o aceite dos adicionais de <strong>20 fones por R$ 1.750,00</strong> e <strong>1 microfone bastão sem fio UHF Sennheiser por R$ 540,00</strong>, totalizando <strong>R$ 2.290,00 de adicional pendente</strong>.</p>
 
 <div class="accept-actions">
 <button id="acceptBtn" class="btn btn-primary" type="button">Aceitar e finalizar</button>
@@ -289,7 +289,7 @@ btn.addEventListener('click',async()=>{
     'Pacote principal':'R$ 15.000,00',
     'Adicional — 20 fones':'R$ 1.750,00',
     'Adicional — Microfone bastão UHF Sennheiser':'R$ 180,00',
-    'Adicional pendente':'R$ 1.930,00',
+    'Adicional pendente':'R$ 2.290,00',
     'Data e hora do aceite':dataAceite,
     'Declaração':'Cliente aceitou o escopo principal e os adicionais apresentados na Proposta 045.',
     '_honey':''
@@ -307,7 +307,7 @@ btn.addEventListener('click',async()=>{
     statusEl.className='status ok';
     statusEl.textContent='Proposta aceita e finalizada.';
     receipt.classList.add('show');
-    receiptText.textContent='Aceite registrado em '+dataAceite+'. Adicional pendente reconhecido: R$ 1.930,00.';
+    receiptText.textContent='Aceite registrado em '+dataAceite+'. Adicional pendente reconhecido: R$ 2.290,00.';
     btn.textContent='Proposta finalizada';
   }catch(err){
     statusEl.className='status error';
