@@ -4,157 +4,155 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#07090c">
-<meta name="description" content="Proposta 045 — Palestra Silenciosa com 50 fones sem fio e microfone headset para professor/palestrante.">
+<meta name="description" content="Proposta 045 — Palestra Silenciosa">
 <title>Forward Zone — Proposta 045 | Palestra Silenciosa</title>
 <style>
 :root{
   --bg:#07090c;--panel:#0d1217;--panel2:#111820;--text:#f3f6f7;--muted:#8b989e;
   --line:rgba(235,243,245,.13);--line2:rgba(235,243,245,.26);--silver:#dce4e6;
-  --glow:rgba(207,224,230,.18);--max:1380px
+  --green:#9bd8b3;--max:1280px
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;background:var(--bg)}
+html{background:var(--bg)}
 body{margin:0;color:var(--text);font-family:Manrope,Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:
-radial-gradient(900px 560px at 82% -8%,rgba(181,205,212,.14),transparent 58%),
-radial-gradient(650px 480px at -12% 36%,rgba(114,137,145,.08),transparent 58%),
-linear-gradient(180deg,#07090c,#0a0e12 50%,#07090c);line-height:1.5;overflow-x:hidden}
-a{color:inherit;text-decoration:none}.container{width:min(var(--max),calc(100% - 48px));margin:auto}
-.nav{position:absolute;inset:0 0 auto;z-index:20;padding:24px 0}.nav-in{display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:-.04em}.mark{width:42px;height:42px;border:1px solid var(--line2);position:relative;background:rgba(255,255,255,.025)}
+radial-gradient(900px 560px at 82% -8%,rgba(181,205,212,.13),transparent 58%),
+linear-gradient(180deg,#07090c,#0a0e12 50%,#07090c);line-height:1.5}
+.container{width:min(var(--max),calc(100% - 48px));margin:auto}
+.nav{padding:24px 0;border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:-.04em}
+.mark{width:42px;height:42px;border:1px solid var(--line2);position:relative;background:rgba(255,255,255,.025)}
 .mark:before,.mark:after{content:"";position:absolute;left:8px;height:6px;background:linear-gradient(90deg,#f8fbfb,#9dabb0);transform:skewX(-24deg)}
 .mark:before{top:12px;width:26px}.mark:after{top:23px;left:4px;width:21px}
 .brand small{display:block;color:#718086;font-size:9px;letter-spacing:.18em;text-transform:uppercase}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 18px;border-radius:8px;font-size:13px;font-weight:850;border:1px solid transparent;cursor:pointer}
-.btn-primary{background:var(--silver);color:#091014}.btn-ghost{border-color:var(--line2);background:rgba(255,255,255,.025)}
-.hero{min-height:890px;display:flex;align-items:flex-end;padding:160px 0 98px;position:relative;overflow:hidden}
-.hero:before{content:"";position:absolute;inset:0;background-image:
-linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px),
-linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px);background-size:80px 80px;mask-image:linear-gradient(90deg,transparent,#000 28%,#000)}
-.hero:after{content:"";position:absolute;inset:0;background:
-linear-gradient(150deg,transparent 0 43%,rgba(255,255,255,.06) 43.08%,transparent 43.25%),
-linear-gradient(150deg,transparent 0 70%,rgba(255,255,255,.04) 70.08%,transparent 70.2%)}
-.hero-layout{position:relative;z-index:2;display:grid;grid-template-columns:1.18fr .6fr;gap:70px;align-items:end}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;color:#adb9bd;font-size:11px;font-weight:850;letter-spacing:.14em;text-transform:uppercase}
-.dot{width:8px;height:8px;border-radius:50%;background:#edf3f4;box-shadow:0 0 0 5px rgba(237,243,244,.07),0 0 20px rgba(237,243,244,.55)}
-h1,h2,h3,p{margin-top:0}h1{font-size:clamp(58px,8vw,120px);line-height:.88;letter-spacing:-.075em;margin:24px 0 30px;font-weight:950;max-width:1050px}
-h1 span{color:var(--silver)}.lead{max-width:790px;color:#bac4c7;font-size:clamp(18px,2vw,23px);line-height:1.6}.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
-.hero-side{border-left:1px solid var(--line2);padding-left:28px}.kpi{padding:22px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:90px 1fr;gap:14px;align-items:center}
-.kpi strong{font-size:31px;letter-spacing:-.06em}.kpi span{font-size:13px;color:#8f9da2}
-.strip{position:relative;z-index:5;margin-top:-38px}.strip-grid{display:grid;grid-template-columns:repeat(4,1fr);background:rgba(15,21,26,.94);border:1px solid var(--line2);backdrop-filter:blur(14px)}
-.strip-item{padding:26px 28px;border-right:1px solid var(--line)}.strip-item:last-child{border-right:0}.strip-item b{display:block;font-size:23px;letter-spacing:-.05em}.strip-item span{font-size:12px;color:#7b888e}
-.section{padding:120px 0}.section-head{display:grid;grid-template-columns:250px 1fr;gap:70px;margin-bottom:50px}.index{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#748187}.index b{color:#d4dcde}
-.section-copy h2{font-size:clamp(42px,5.2vw,76px);line-height:.95;letter-spacing:-.065em;margin:0 0 24px;font-weight:950;max-width:1080px}.section-copy p{max-width:820px;color:#8d9a9f;font-size:17px;line-height:1.75}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}.card{background:#0d1217;padding:32px;min-height:315px}
-.card small{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#6e7b81}.card h3{font-size:25px;letter-spacing:-.045em;margin:66px 0 14px}.card p{font-size:13px;line-height:1.72;color:#7f8d92}
-.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.step{position:relative;border:1px solid var(--line);background:#0c1116;padding:28px;min-height:170px}.step:not(:last-child):after{content:"→";position:absolute;right:-20px;top:50%;transform:translate(50%,-50%);color:#647177}.step small{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#6f7c82}.step b{display:block;font-size:18px;margin-top:42px;letter-spacing:-.035em}.step p{font-size:12px;color:#77858a;margin:10px 0 0}
-.invest{display:grid;grid-template-columns:.9fr 1.1fr;border:1px solid var(--line2);background:#0c1116}.price-side{padding:46px;border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:space-between;min-height:540px}
-.label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#718086}.price{font-size:clamp(64px,7vw,102px);font-weight:950;letter-spacing:-.08em;line-height:.9;margin:20px 0 10px}.price sup{font-size:17px;vertical-align:top;letter-spacing:0;color:#89979c;margin-right:7px}
-.price-note{border-top:1px solid var(--line);padding-top:26px;color:#a6b1b5;font-size:14px;line-height:1.72}.breakdown{padding:46px}.row{display:grid;grid-template-columns:1fr auto;gap:25px;padding:20px 0;border-bottom:1px solid var(--line);align-items:center}.row:last-child{border-bottom:0}
-.row b{font-size:16px;letter-spacing:-.025em}.row p{margin:5px 0 0;color:#7e8b90;font-size:12px}.row strong{font-size:20px;letter-spacing:-.045em}.total{margin-top:24px;background:linear-gradient(135deg,#dce4e6,#b8c6c9);color:#0a0f13;padding:34px 40px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}
-.total h3{font-size:clamp(30px,4vw,48px);letter-spacing:-.06em;margin:0}.total p{margin:8px 0 0;color:#3c494f;font-size:13px}.total-price{font-size:56px;font-weight:950;letter-spacing:-.075em;white-space:nowrap}
-.faq{max-width:980px;margin-left:auto}.faq details{padding:23px 0;border-top:1px solid var(--line)}.faq details:last-child{border-bottom:1px solid var(--line)}.faq summary{list-style:none;cursor:pointer;font-weight:850}.faq summary::-webkit-details-marker{display:none}.faq p{margin:14px 35px 0 0;color:#7e8c91;font-size:14px;line-height:1.7}
-.cta{padding:105px 0 78px}.cta-box{padding:60px;background:linear-gradient(135deg,#dfe7e8,#b8c7ca);color:#091014}.cta-box h2{font-size:clamp(44px,6vw,78px);line-height:.92;letter-spacing:-.07em;max-width:1000px;margin:20px 0 36px}
-footer{padding:10px 0 40px;color:#637076;font-size:11px}.footer-in{display:flex;justify-content:space-between;gap:25px;border-top:1px solid var(--line);padding-top:24px}
-@media(max-width:1080px){.hero-layout{grid-template-columns:1fr}.hero-side{max-width:650px}.strip-grid{grid-template-columns:1fr 1fr}.grid3{grid-template-columns:1fr}.flow{grid-template-columns:1fr}.step:not(:last-child):after{content:"↓";right:auto;left:50%;top:auto;bottom:-20px;transform:translate(-50%,50%)}.invest{grid-template-columns:1fr}.price-side{border-right:0;border-bottom:1px solid var(--line)}.total{grid-template-columns:1fr}}
-@media(max-width:720px){.container{width:calc(100% - 28px)}.nav{padding:16px 0}.nav .btn-ghost{display:none}.hero{min-height:auto;padding:140px 0 72px}.hero h1{font-size:clamp(52px,17vw,76px)}.hero-side{display:none}.strip{margin-top:-10px}.strip-grid{grid-template-columns:1fr 1fr}.strip-item{padding:20px 16px}.section{padding:84px 0}.section-head{grid-template-columns:1fr;gap:20px}.section-copy h2{font-size:clamp(38px,12vw,56px)}.price-side,.breakdown{padding:30px 23px}.price{font-size:60px}.total{padding:28px 23px}.total-price{font-size:46px;white-space:normal}.cta-box{padding:38px 24px}.footer-in{flex-direction:column}}
-@media print{.nav,.hero-cta,.cta a{display:none!important}.hero{min-height:auto;padding-top:50px}.strip{margin-top:0}.section,.cta{padding:50px 0}.card,.invest,.step{break-inside:avoid}}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 17px;border-radius:8px;font-size:13px;font-weight:850;border:1px solid var(--line2);background:rgba(255,255,255,.025);color:#fff;cursor:pointer}
+.hero{padding:95px 0 70px}
+.eyebrow{font-size:11px;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:#aeb9bd}
+h1,h2,h3,p{margin-top:0}
+h1{font-size:clamp(54px,8vw,104px);line-height:.9;letter-spacing:-.075em;margin:22px 0 25px;font-weight:950;max-width:1000px}
+h1 span{color:var(--silver)}
+.lead{max-width:760px;color:#aeb9bd;font-size:19px;line-height:1.65}
+.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:48px}
+.summary-card{background:#0c1116;padding:28px}
+.summary-card small{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#718086;margin-bottom:17px}
+.summary-card b{font-size:28px;letter-spacing:-.05em}
+.section{padding:70px 0}
+.section-title{display:grid;grid-template-columns:220px 1fr;gap:55px;margin-bottom:34px}
+.index{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#748187}.index b{color:#d4dcde}
+.section-title h2{font-size:clamp(34px,4.5vw,58px);line-height:.98;letter-spacing:-.06em;margin:0;font-weight:950}
+.scope{border:1px solid var(--line2);background:#0c1116}
+.scope-row{display:grid;grid-template-columns:55px 1fr auto;gap:20px;align-items:center;padding:22px 28px;border-bottom:1px solid var(--line)}
+.scope-row:last-child{border-bottom:0}
+.scope-no{font-size:11px;font-weight:900;color:#849197}
+.scope-row b{font-size:16px;letter-spacing:-.025em}
+.scope-row p{margin:4px 0 0;color:#7f8d92;font-size:12px}
+.scope-value{font-size:18px;font-weight:900;white-space:nowrap}
+.finance{display:grid;grid-template-columns:1.05fr .95fr;gap:20px}
+.breakdown,.balance{border:1px solid var(--line2);background:#0c1116;padding:34px}
+.label{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#718086;margin-bottom:20px}
+.money-row{display:grid;grid-template-columns:1fr auto;gap:20px;padding:17px 0;border-bottom:1px solid var(--line);align-items:center}
+.money-row:last-child{border-bottom:0}
+.money-row span{color:#aeb9bd;font-size:13px}.money-row strong{font-size:18px;letter-spacing:-.03em}
+.total{margin-top:20px;padding-top:22px;border-top:1px solid var(--line2);display:flex;justify-content:space-between;align-items:end;gap:20px}
+.total span{color:#8b989e;font-size:12px}.total strong{font-size:42px;letter-spacing:-.065em}
+.balance .paid{padding:22px 0;border-bottom:1px solid var(--line)}
+.balance .paid:last-child{border-bottom:0}
+.balance small{display:block;color:#718086;font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
+.balance strong{font-size:42px;letter-spacing:-.065em}
+.balance .ok strong{color:var(--green)}
+.balance .remaining{margin-top:18px;padding:24px;border:1px solid rgba(220,228,230,.3);background:linear-gradient(135deg,rgba(220,228,230,.09),rgba(220,228,230,.025))}
+.balance .remaining strong{font-size:54px;color:#fff}
+.note{margin-top:18px;color:#7f8d92;font-size:12px;line-height:1.65}
+footer{padding:30px 0 42px;color:#637076;font-size:11px}.footer-in{display:flex;justify-content:space-between;gap:25px;border-top:1px solid var(--line);padding-top:22px}
+@media(max-width:900px){.summary{grid-template-columns:1fr}.section-title{grid-template-columns:1fr;gap:12px}.finance{grid-template-columns:1fr}}
+@media(max-width:650px){.container{width:calc(100% - 28px)}.nav-in{align-items:flex-start}.brand small{display:none}.hero{padding:70px 0 52px}h1{font-size:clamp(48px,16vw,72px)}.scope-row{grid-template-columns:38px 1fr}.scope-value{grid-column:2}.breakdown,.balance{padding:26px 22px}.total{align-items:flex-start;flex-direction:column}.balance .remaining strong{font-size:46px}.footer-in{flex-direction:column}}
+@media print{.nav .btn{display:none}.hero{padding-top:45px}.section{padding:42px 0}.scope-row,.breakdown,.balance{break-inside:avoid}}
 </style>
 </head>
 <body>
 <header class="nav">
 <div class="container nav-in">
-<a class="brand" href="#inicio"><span class="mark"></span><span>Forward Zone<small>event experience</small></span></a>
-<div><button class="btn btn-ghost" onclick="window.print()">Imprimir proposta</button> <a class="btn btn-primary" href="#investimento">Ver investimento ↓</a></div>
+<div class="brand"><span class="mark"></span><span>Forward Zone<small>proposta comercial</small></span></div>
+<button class="btn" onclick="window.print()">Salvar em PDF</button>
 </div>
 </header>
-<main id="inicio">
+
+<main>
 <section class="hero">
-<div class="container hero-layout">
-<div>
-<div class="eyebrow"><span class="dot"></span> proposta 045 • palestra silenciosa</div>
-<h1>Clareza para quem ensina. <span>Imersão para quem aprende.</span></h1>
-<p class="lead">Uma experiência de palestra silenciosa para até 50 participantes, com transmissão individual de áudio diretamente para os fones e microfone headset dedicado ao professor/palestrante.</p>
-<div class="hero-cta"><a class="btn btn-primary" href="#investimento">Ver investimento</a><a class="btn btn-ghost" href="#estrutura">Conhecer a estrutura</a></div>
+<div class="container">
+<div class="eyebrow">Proposta 045 • Palestra Silenciosa</div>
+<h1>Palestra silenciosa para <span>50 participantes.</span></h1>
+<p class="lead">Estrutura contratada para realização da palestra silenciosa, incluindo ampliação da quantidade de fones e microfone sem fio adicional.</p>
+
+<div class="summary">
+<div class="summary-card"><small>capacidade</small><b>50 fones sem fio</b></div>
+<div class="summary-card"><small>áudio do professor</small><b>1 microfone headset</b></div>
+<div class="summary-card"><small>microfone adicional</small><b>1 Sennheiser UHF</b></div>
 </div>
-<aside class="hero-side">
-<div class="kpi"><strong>50</strong><span>fones sem fio para participantes</span></div>
-<div class="kpi"><strong>01</strong><span>microfone headset para professor/palestrante</span></div>
-<div class="kpi"><strong>5.850</strong><span>valor total após ampliação aprovada</span></div>
-</aside>
 </div>
 </section>
 
-<div class="strip"><div class="container strip-grid">
-<div class="strip-item"><b>50 participantes</b><span>áudio individual via fones</span></div>
-<div class="strip-item"><b>Headset</b><span>liberdade para o professor</span></div>
-<div class="strip-item"><b>Sem ruído</b><span>conteúdo direto ao participante</span></div>
-<div class="strip-item"><b>Experiência</b><span>imersiva e organizada</span></div>
-</div></div>
-
-<section class="section" id="estrutura"><div class="container">
-<div class="section-head"><div class="index"><b>01</b> / experiência</div><div class="section-copy">
-<h2>Uma palestra que acontece dentro do ambiente, sem disputar atenção com o ambiente.</h2>
-<p>O áudio do professor é enviado diretamente aos participantes. Isso permite uma experiência focada, limpa e imersiva mesmo em espaços com circulação, conversas ou outras atividades acontecendo próximas.</p>
-</div></div>
-<div class="grid3">
-<article class="card"><small>01 / participante</small><h3>50 fones sem fio</h3><p>Cada participante recebe o conteúdo diretamente no fone, com experiência individual de áudio e maior concentração durante a apresentação.</p></article>
-<article class="card"><small>02 / professor</small><h3>Microfone headset</h3><p>O professor/palestrante utiliza headset dedicado, mantendo as mãos livres e liberdade de movimentação durante a apresentação.</p></article>
-<article class="card"><small>03 / formato</small><h3>Palestra silenciosa</h3><p>A proposta contempla exclusivamente a estrutura de palestra silenciosa descrita nesta página, sem mistura com outros serviços de marketing ou audiovisual.</p></article>
+<section class="section">
+<div class="container">
+<div class="section-title">
+<div class="index"><b>01</b> / escopo</div>
+<h2>Estrutura contemplada nesta proposta.</h2>
 </div>
-</div></section>
 
-<section class="section"><div class="container">
-<div class="section-head"><div class="index"><b>02</b> / dinâmica</div><div class="section-copy">
-<h2>Uma jornada simples para quem apresenta e para quem participa.</h2>
-</div></div>
-<div class="flow">
-<div class="step"><small>01</small><b>Professor utiliza o headset</b><p>A fala é captada diretamente pelo sistema.</p></div>
-<div class="step"><small>02</small><b>Áudio é transmitido</b><p>O conteúdo segue sem fio para os participantes.</p></div>
-<div class="step"><small>03</small><b>50 participantes recebem o sinal</b><p>Cada pessoa acompanha pelo próprio fone.</p></div>
-<div class="step"><small>04</small><b>Mais foco e imersão</b><p>A palestra acontece sem depender de caixas de som convencionais.</p></div>
+<div class="scope">
+<div class="scope-row">
+<div class="scope-no">01</div>
+<div><b>Palestra silenciosa — estrutura original</b><p>30 fones sem fio + 1 microfone headset para professor/palestrante.</p></div>
+<div class="scope-value">R$ 4.100,00</div>
 </div>
-</div></section>
-
-<section class="section" id="investimento"><div class="container">
-<div class="section-head"><div class="index"><b>03</b> / investimento</div><div class="section-copy">
-<h2>A ampliação leva a estrutura de 30 para 50 fones.</h2>
-<p>A proposta original já aprovada permanece como base. O novo investimento corresponde exclusivamente à inclusão de mais 20 fones, totalizando 50 unidades para participantes.</p>
-</div></div>
-
-<div class="invest">
-<div class="price-side">
-<div><div class="label">valor total da estrutura</div><div class="price"><sup>R$</sup>5.850,00</div><div class="label">50 fones + 1 headset</div></div>
-<div class="price-note">Composição: proposta originalmente aprovada de R$ 4.100,00 para 30 fones + 1 microfone headset, acrescida de R$ 1.750,00 pela inclusão de mais 20 fones.</div>
+<div class="scope-row">
+<div class="scope-no">02</div>
+<div><b>Ampliação para 50 participantes</b><p>Inclusão de mais 20 fones sem fio, totalizando 50 unidades.</p></div>
+<div class="scope-value">R$ 1.750,00</div>
 </div>
+<div class="scope-row">
+<div class="scope-no">03</div>
+<div><b>Microfone sem fio UHF Sennheiser</b><p>1 unidade adicional para uso no evento — bastão / linha profissional sem fio UHF.</p></div>
+<div class="scope-value">R$ 180,00 / dia</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="section-title">
+<div class="index"><b>02</b> / financeiro</div>
+<h2>Composição do investimento e saldo restante.</h2>
+</div>
+
+<div class="finance">
 <div class="breakdown">
-<div class="label" style="margin-bottom:14px">composição comercial</div>
-<div class="row"><div><b>Estrutura originalmente aprovada</b><p>30 fones sem fio + 1 microfone headset para professor/palestrante</p></div><strong>R$ 4.100,00</strong></div>
-<div class="row"><div><b>Ampliação da capacidade</b><p>+20 fones sem fio adicionais</p></div><strong>R$ 1.750,00</strong></div>
-<div class="row"><div><b>Capacidade final</b><p>50 fones sem fio + 1 microfone headset</p></div><strong>50 pessoas</strong></div>
-</div>
+<div class="label">composição do valor total</div>
+<div class="money-row"><span>Estrutura original aprovada</span><strong>R$ 4.100,00</strong></div>
+<div class="money-row"><span>20 fones adicionais</span><strong>R$ 1.750,00</strong></div>
+<div class="money-row"><span>Microfone sem fio UHF Sennheiser — 1 diária</span><strong>R$ 180,00</strong></div>
+<div class="total"><span>VALOR TOTAL ATUALIZADO</span><strong>R$ 6.030,00</strong></div>
 </div>
 
-<div class="total"><div><h3>Investimento final: R$ 5.850,00</h3><p>Valor total da palestra silenciosa após a ampliação para 50 fones.</p></div><div class="total-price">R$ 5.850,00</div></div>
-</div></section>
-
-<section class="section"><div class="container">
-<div class="section-head"><div class="index"><b>04</b> / dúvidas</div><div class="section-copy"><h2>Escopo objetivo e separado.</h2></div></div>
-<div class="faq">
-<details><summary>Esta proposta substitui a anterior?</summary><p>Ela consolida a proposta já aprovada com a ampliação solicitada de mais 20 fones, apresentando o total final de 50 unidades.</p></details>
-<details><summary>Qual foi o valor da ampliação?</summary><p>O adicional é de <strong>R$ 1.750,00</strong> para mais 20 fones, equivalente a R$ 87,50 por unidade adicional.</p></details>
-<details><summary>Qual é a capacidade final?</summary><p>A estrutura final atende até <strong>50 participantes</strong> com fones sem fio e inclui <strong>1 microfone headset</strong> para o professor/palestrante.</p></details>
-<details><summary>A proposta inclui outros serviços?</summary><p>Não. A Proposta 045 foi preparada exclusivamente para a palestra silenciosa e para os equipamentos descritos neste escopo.</p></details>
+<div class="balance">
+<div class="label">situação de pagamento</div>
+<div class="paid ok"><small>valor já pago pelo cliente</small><strong>R$ 3.731,00</strong></div>
+<div class="paid"><small>valor total da proposta</small><strong>R$ 6.030,00</strong></div>
+<div class="remaining"><small>SALDO RESTANTE A PAGAR</small><strong>R$ 2.299,00</strong></div>
+<div class="note">O valor já pago corresponde à diferença entre o total atualizado da proposta e o saldo pendente informado.</div>
 </div>
-</div></section>
-
-<section class="cta"><div class="container"><div class="cta-box">
-<div class="eyebrow" style="color:#2b373c"><span class="dot" style="background:#172126;box-shadow:none"></span> forward zone / proposta 045</div>
-<h2>50 pessoas. Uma única mensagem. Cada participante ouvindo com clareza.</h2>
-<button class="btn btn-primary" onclick="window.print()">Salvar proposta em PDF</button>
-</div></div></section>
+</div>
+</div>
+</section>
 </main>
 
-<footer><div class="container footer-in"><div><strong style="color:#aeb9bd">Forward Zone</strong> — experiência e produção para eventos.</div><div>Proposta 045 • <span id="year"></span></div></div></footer>
+<footer>
+<div class="container footer-in">
+<div><strong style="color:#aeb9bd">Forward Zone</strong> — Proposta 045</div>
+<div>Palestra Silenciosa • <span id="year"></span></div>
+</div>
+</footer>
 <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
 </body>
 </html>
