@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0b0b0d" />
+  <title>Forward Zone — Proposta 0100 | Plano Essencial para Nails Designer</title>
+  <style>
+    :root{
+      --bg:#0b0b0d;--panel:#131317;--panel2:#17171d;--text:#f6f3f7;--muted:#b8aeba;
+      --line:rgba(255,255,255,.12);--line2:rgba(255,255,255,.2);--pink:#f4bfd2;
+      --pink2:#e7a9c2;--rose:#d68cab;--max:1240px;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth;background:var(--bg)}
+    body{margin:0;color:var(--text);font-family:Inter,Manrope,Arial,sans-serif;background:
+      radial-gradient(900px 520px at 85% -8%, rgba(236,176,202,.14), transparent 58%),
+      radial-gradient(620px 420px at -10% 38%, rgba(214,140,171,.1), transparent 56%),
+      linear-gradient(180deg,#0b0b0d,#101015 52%,#0b0b0d);line-height:1.5}
+    a{color:inherit;text-decoration:none}.container{width:min(var(--max),calc(100% - 44px));margin:auto}
+    .nav{padding:24px 0;border-bottom:1px solid var(--line)}.nav-in{display:flex;justify-content:space-between;align-items:center;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:-.04em}
+    .mark{width:42px;height:42px;border:1px solid var(--line2);background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.015));position:relative}
+    .mark:before,.mark:after{content:"";position:absolute;left:7px;height:6px;border-radius:8px;background:linear-gradient(90deg,var(--pink),#fff);transform:skewX(-25deg)}
+    .mark:before{top:13px;width:27px}.mark:after{top:23px;width:20px;left:11px}.brand small{display:block;font-size:10px;letter-spacing:.18em;color:#9f95a0;text-transform:uppercase}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border-radius:10px;border:1px solid var(--line2);font-weight:800;font-size:13px;background:rgba(255,255,255,.03);cursor:pointer}
+    .btn-primary{background:linear-gradient(135deg,var(--pink),var(--pink2));color:#1a1217;border:0}
+    .hero{padding:96px 0 72px}.hero-grid{display:grid;grid-template-columns:1.08fr .72fr;gap:54px;align-items:end}
+    .eyebrow{font-size:11px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:#d3c5d0}
+    h1,h2,h3,p{margin-top:0} h1{font-size:clamp(52px,8vw,102px);line-height:.9;letter-spacing:-.075em;margin:20px 0 24px;font-weight:950;max-width:900px}
+    h1 span{color:var(--pink)}.lead{max-width:760px;color:#d2c5d0;font-size:20px;line-height:1.65}.hero-side{display:grid;gap:18px}
+    .macro-card{min-height:220px;border:1px solid var(--line2);overflow:hidden;position:relative;background:
+      radial-gradient(circle at 24% 32%, rgba(255,255,255,.35), transparent 10%),
+      radial-gradient(circle at 68% 50%, rgba(255,255,255,.25), transparent 11%),
+      radial-gradient(circle at 52% 70%, rgba(255,255,255,.18), transparent 10%),
+      linear-gradient(140deg,#422733,#7f475d 38%,#f2bfd0 70%,#fff3f7 100%)}
+    .macro-card:after{content:"macro nail visual";position:absolute;left:18px;bottom:14px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(20,12,18,.72);font-weight:900}
+    .price-chip{border:1px solid var(--line2);background:rgba(255,255,255,.03);padding:24px}.price-chip b{display:block;font-size:40px;letter-spacing:-.06em}.price-chip span{font-size:13px;color:#b6aab6}
+    .section{padding:86px 0}.section-title{display:grid;grid-template-columns:220px 1fr;gap:52px;margin-bottom:34px}
+    .index{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#9d929d}.index b{color:#fff}
+    .section-title h2{font-size:clamp(36px,5vw,64px);line-height:.96;letter-spacing:-.065em;margin:0;font-weight:950;max-width:980px}
+    .section-title p{margin:16px 0 0;max-width:820px;color:#b9adb8;font-size:16px;line-height:1.75}
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+    .card{background:var(--panel);padding:32px;min-height:300px}.card small{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#9a9099}
+    .card h3{font-size:24px;letter-spacing:-.045em;margin:58px 0 14px}.card p{font-size:13px;line-height:1.72;color:#b4a8b3}
+    .offer{display:grid;grid-template-columns:.9fr 1.1fr;border:1px solid var(--line2);background:var(--panel2)}.offer-main{padding:42px;border-right:1px solid var(--line)}
+    .label{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#9a9099}.price{font-size:clamp(70px,8vw,108px);font-weight:950;letter-spacing:-.085em;line-height:.9;margin:22px 0 8px}
+    .price sup{font-size:17px;vertical-align:top;color:#ab9eab;margin-right:7px}.per{font-size:14px;color:#b7aab6}.bullet-list{padding:42px}
+    .item{display:flex;justify-content:space-between;gap:18px;padding:16px 0;border-bottom:1px solid var(--line);font-size:13px;color:#dfd7de}.item:last-child{border-bottom:0}.yes{font-weight:900;color:#fff2f7}
+    .traffic{margin-top:24px;border:1px solid var(--line2);background:linear-gradient(135deg,#f0bfd1,#dfa4be);color:#1a1116;padding:30px 34px}.traffic h3{margin:0 0 8px;font-size:clamp(28px,4vw,44px);letter-spacing:-.055em}
+    .traffic p{margin:0;color:#37212b;font-size:13px;max-width:860px}.cta{padding:88px 0 72px}.cta-box{background:linear-gradient(135deg,#f2c3d5,#e5a7c0);color:#1a1217;padding:54px}
+    .cta-box h2{font-size:clamp(40px,6vw,72px);line-height:.93;letter-spacing:-.07em;max-width:920px;margin:16px 0 28px}
+    footer{padding:26px 0 42px;color:#8f848f;font-size:11px}.footer-in{display:flex;justify-content:space-between;gap:24px;border-top:1px solid var(--line);padding-top:22px}
+    @media(max-width:980px){.hero-grid,.offer{grid-template-columns:1fr}.offer-main{border-right:0;border-bottom:1px solid var(--line)}.grid3{grid-template-columns:1fr}.section-title{grid-template-columns:1fr;gap:12px}}
+    @media(max-width:650px){.container{width:calc(100% - 28px)}.brand small{display:none}.hero{padding:78px 0 56px}h1{font-size:clamp(48px,16vw,72px)}.offer-main,.bullet-list{padding:28px 22px}.price{font-size:62px}.cta-box{padding:36px 24px}.footer-in{flex-direction:column}}
+    @media print{.nav .btn,.cta .btn{display:none}.section,.cta{padding:48px 0}}
+  .brand-logo{width:46px;height:46px;display:grid;place-items:center;color:#fff;flex:0 0 auto}.brand-logo svg{width:100%;height:100%;display:block}
+</style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2212%22%20fill%3D%22%230b0b0d%22%2F%3E%3Cg%20transform%3D%22translate(-23%20-28)%20scale(.115)%22%20fill%3D%22%23fff%22%3E%3Cpath%20d%3D%22M964%20414L951%20403L599%20404L585%20417L537%20522L514%20548L481%20561L370%20561L359%20566L300%20685L299%20699L316%20712L428%20712L456%20707L517%20589L536%20571L556%20562L899%20559L914%20544L963%20433Z%22%2F%3E%3Cpath%20d%3D%22M838%20688L829%20679L577%20680L564%20692L530%20764L510%20783L491%20790L415%20790L405%20794L367%20873L365%20888L377%20898L467%20898L475%20895L483%20886L514%20815L531%20798L551%20790L792%20788L802%20780L839%20700Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+</head>
+<body>
+<header class="nav"><div class="container nav-in"><div class="brand"><span class="brand-logo" aria-hidden="true"><svg viewBox="260 370 740 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Forward Zone"><path fill="currentColor" d="M964 414L951 403L599 404L585 417L537 522L514 548L481 561L370 561L359 566L300 685L299 699L316 712L428 712L456 707L517 589L536 571L556 562L899 559L914 544L963 433Z"/><path fill="currentColor" d="M838 688L829 679L577 680L564 692L530 764L510 783L491 790L415 790L405 794L367 873L365 888L377 898L467 898L475 895L483 886L514 815L531 798L551 790L792 788L802 780L839 700Z"/></svg></span><span>Forward Zone<small>proposta nails</small></span></div><button class="btn" onclick="window.print()">Salvar em PDF</button></div></header>
+<main>
+<section class="hero"><div class="container hero-grid"><div><div class="eyebrow">Proposta 0100 • Plano Essencial para Nails Designer</div><h1>Presença digital para <span>atrair mais clientes</span> de forma constante.</h1><p class="lead">Uma proposta pensada para Nails Designers que querem crescer com uma estrutura simples e funcional, focada em conteúdo, visibilidade e campanhas para gerar novas oportunidades no Instagram.</p></div><aside class="hero-side"><div class="macro-card"></div><div class="price-chip"><b>R$ 450,00</b><span>investimento mensal no serviço</span></div></aside></div></section>
+<section class="section" style="padding-top:0"><div class="container"><div class="section-title"><div class="index"><b>01</b> / foco do plano</div><div><h2>Um plano enxuto para crescer público, visibilidade e procura.</h2><p>O Plano Essencial foi criado para Nails Designers que já atendem, produzem bons resultados no trabalho e agora precisam organizar a presença digital para aparecer mais, fortalecer autoridade e transformar o Instagram em uma ferramenta real de captação.</p></div></div><div class="grid3">
+<article class="card"><small>01 / conteúdo</small><h3>Direcionamento estratégico</h3><p>Definição dos conteúdos e abordagens que ajudam a comunicar qualidade, diferencial estético e valor percebido do trabalho.</p></article>
+<article class="card"><small>02 / presença</small><h3>Fortalecimento de imagem</h3><p>Construção de uma presença mais profissional nas redes, com foco em atrair atenção, gerar confiança e aumentar a lembrança da marca pessoal.</p></article>
+<article class="card"><small>03 / campanhas</small><h3>Visibilidade paga</h3><p>Ativação de campanhas para ampliar o alcance local, atrair novas potenciais clientes e acelerar a distribuição do conteúdo.</p></article>
+</div></div></section>
+<section class="section"><div class="container"><div class="section-title"><div class="index"><b>02</b> / investimento</div><div><h2>Investimento simples e separado.</h2><p>O valor do serviço e o valor da mídia ficam separados para deixar claro o que é gestão/estratégia e o que é orçamento de campanha.</p></div></div><div class="offer"><div class="offer-main"><div class="label">Plano Essencial • serviço mensal</div><div class="price"><sup>R$</sup>450,00</div><div class="per">por mês</div></div><div class="bullet-list"><div class="label" style="margin-bottom:14px">incluído no plano</div><div class="item"><span>Direcionamento estratégico de conteúdo</span><span class="yes">✓</span></div><div class="item"><span>Organização da presença digital</span><span class="yes">✓</span></div><div class="item"><span>Campanhas de visibilidade e captação</span><span class="yes">✓</span></div><div class="item"><span>Acompanhamento da comunicação</span><span class="yes">✓</span></div><div class="item"><span>Foco em crescimento de público e procura</span><span class="yes">✓</span></div></div></div><div class="traffic"><h3>Investimento em campanhas: R$ 20,00 por dia.</h3><p>O valor de tráfego é pago <strong>diretamente no Instagram / Meta</strong> pela profissional, sem intermediação da Forward Zone. Esse orçamento é separado do valor mensal de serviço.</p></div></div></section>
+<section class="cta"><div class="container"><div class="cta-box"><div class="eyebrow" style="color:#5f3748">Forward Zone • Proposta 0100</div><h2>Um plano essencial para transformar talento em presença e presença em novas clientes.</h2><button class="btn btn-primary" onclick="window.print()">Salvar proposta</button></div></div></section>
+</main>
+<footer><div class="container footer-in"><div><strong style="color:#d4c9d3">Forward Zone</strong> — Propostas 0100+ dedicadas ao segmento Nails.</div><div>Proposta 0100 • <span id="year"></span></div></div></footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body></html>
