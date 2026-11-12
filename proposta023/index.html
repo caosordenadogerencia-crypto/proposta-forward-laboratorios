@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07090c">
+<meta name="description" content="Forward IA — Prospecção, qualificação e crescimento para laboratórios de prótese.">
+<title>Forward Zone — Proposta 023 | Forward IA</title>
+<style>
+:root{
+  --bg:#07090c;--panel:#0d1217;--panel2:#111820;--text:#f3f6f7;--muted:#8b989e;
+  --line:rgba(235,243,245,.13);--line2:rgba(235,243,245,.26);--silver:#dce4e6;
+  --green:#9bd8b3;--max:1320px
+}
+*{box-sizing:border-box}
+html{background:var(--bg);scroll-behavior:smooth}
+body{margin:0;color:var(--text);font-family:Manrope,Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:
+radial-gradient(950px 580px at 82% -8%,rgba(181,205,212,.14),transparent 58%),
+radial-gradient(700px 500px at -12% 38%,rgba(120,147,157,.08),transparent 58%),
+linear-gradient(180deg,#07090c,#0a0e12 50%,#07090c);line-height:1.5}
+a{color:inherit;text-decoration:none}
+.container{width:min(var(--max),calc(100% - 48px));margin:auto}
+.nav{padding:24px 0;border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:-.04em}
+.mark{width:42px;height:42px;border:1px solid var(--line2);position:relative;background:rgba(255,255,255,.025)}
+.mark:before,.mark:after{content:"";position:absolute;left:8px;height:6px;background:linear-gradient(90deg,#f8fbfb,#9dabb0);transform:skewX(-24deg)}
+.mark:before{top:12px;width:26px}.mark:after{top:23px;left:4px;width:21px}
+.brand small{display:block;color:#718086;font-size:9px;letter-spacing:.18em;text-transform:uppercase}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 17px;border-radius:8px;font-size:13px;font-weight:850;border:1px solid var(--line2);background:rgba(255,255,255,.025);color:#fff;cursor:pointer}
+.btn-primary{background:var(--silver);color:#091014;border-color:transparent}
+.hero{padding:110px 0 82px}
+.hero-grid{display:grid;grid-template-columns:1.16fr .64fr;gap:70px;align-items:end}
+.eyebrow{font-size:11px;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:#aeb9bd}
+h1,h2,h3,p{margin-top:0}
+h1{font-size:clamp(56px,8vw,108px);line-height:.89;letter-spacing:-.075em;margin:22px 0 28px;font-weight:950;max-width:1050px}
+h1 span{color:var(--silver)}
+.lead{max-width:840px;color:#aeb9bd;font-size:20px;line-height:1.65}
+.hero-side{border-left:1px solid var(--line2);padding-left:28px}
+.kpi{padding:22px 0;border-bottom:1px solid var(--line)}
+.kpi strong{display:block;font-size:31px;letter-spacing:-.06em}
+.kpi span{font-size:13px;color:#8f9da2}
+.strip-grid{display:grid;grid-template-columns:repeat(4,1fr);background:rgba(15,21,26,.94);border:1px solid var(--line2)}
+.strip-item{padding:26px 28px;border-right:1px solid var(--line)}
+.strip-item:last-child{border-right:0}
+.strip-item b{display:block;font-size:22px;letter-spacing:-.045em}
+.strip-item span{font-size:12px;color:#7c898e}
+.section{padding:100px 0}
+.section-title{display:grid;grid-template-columns:230px 1fr;gap:60px;margin-bottom:42px}
+.index{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#748187}.index b{color:#d4dcde}
+.section-title h2{font-size:clamp(38px,5vw,68px);line-height:.96;letter-spacing:-.065em;margin:0;font-weight:950;max-width:1060px}
+.section-title p{margin:18px 0 0;max-width:860px;color:#8d9a9f;font-size:16px;line-height:1.75}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.step{border:1px solid var(--line);background:#0c1116;padding:28px;min-height:245px}
+.step small{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#6f7c82}
+.step h3{font-size:23px;letter-spacing:-.04em;margin:42px 0 10px}
+.step p{font-size:12px;color:#77858a;line-height:1.7}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.plan{border:1px solid var(--line2);background:#0c1116;padding:38px;display:flex;flex-direction:column}
+.plan.featured{background:linear-gradient(145deg,rgba(220,228,230,.08),transparent 40%),#0c1116}
+.badge{display:inline-flex;padding:9px 12px;border:1px solid rgba(155,216,179,.3);background:rgba(155,216,179,.06);color:var(--green);font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+.label{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#718086}
+.plan h3{font-size:38px;line-height:1;letter-spacing:-.06em;margin:18px 0 12px}
+.plan-desc{color:#88969b;font-size:14px;line-height:1.72;max-width:560px}
+.price-block{margin:28px 0 8px;padding:24px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.price-line{display:flex;justify-content:space-between;gap:20px;align-items:end;padding:7px 0}
+.price-line span{color:#91a0a5;font-size:12px;text-transform:uppercase;letter-spacing:.09em}
+.price-line strong{font-size:30px;letter-spacing:-.055em}
+.price-line.primary strong{font-size:42px;color:#fff}
+.items{margin-top:18px}
+.item{display:grid;grid-template-columns:22px 1fr;gap:12px;padding:15px 0;border-bottom:1px solid var(--line);font-size:13px;color:#adb8bc}
+.check{font-weight:900;color:#eef3f4}
+.note{margin-top:22px;padding:18px;border:1px solid var(--line);background:rgba(255,255,255,.02);font-size:12px;color:#859298;line-height:1.7}
+.no-ads{margin-top:14px;color:#9bd8b3;font-weight:850;font-size:12px}
+.media{margin-top:14px;color:#d9e0e2;font-weight:850;font-size:12px}
+.ai-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.ai-card{background:#0d1217;padding:32px;min-height:280px}
+.ai-card small{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#6e7b81}
+.ai-card h3{font-size:24px;letter-spacing:-.045em;margin:54px 0 12px}
+.ai-card p{font-size:13px;line-height:1.72;color:#7f8d92}
+.highlight{border:1px solid var(--line2);background:linear-gradient(135deg,#dce4e6,#b8c6c9);color:#0a0f13;padding:38px}
+.highlight h3{font-size:clamp(30px,4vw,50px);letter-spacing:-.06em;margin:0 0 8px}
+.highlight p{margin:0;color:#3d4a50;font-size:13px;max-width:920px}
+.cta{padding:95px 0 80px}.cta-box{background:linear-gradient(135deg,#dfe7e8,#b8c7ca);color:#091014;padding:58px}
+.cta-box h2{font-size:clamp(42px,6vw,76px);line-height:.93;letter-spacing:-.07em;max-width:1000px;margin:18px 0 30px}
+footer{padding:28px 0 42px;color:#637076;font-size:11px}.footer-in{display:flex;justify-content:space-between;gap:25px;border-top:1px solid var(--line);padding-top:22px}
+@media(max-width:980px){.hero-grid{grid-template-columns:1fr}.hero-side{display:none}.strip-grid{grid-template-columns:1fr 1fr}.section-title{grid-template-columns:1fr;gap:14px}.flow,.compare,.ai-grid{grid-template-columns:1fr}}
+@media(max-width:650px){.container{width:calc(100% - 28px)}.brand small{display:none}.hero{padding:78px 0 58px}h1{font-size:clamp(50px,16vw,74px)}.strip-grid{grid-template-columns:1fr 1fr}.strip-item{padding:20px 16px}.section{padding:76px 0}.plan{padding:28px 22px}.cta-box{padding:36px 24px}.footer-in{flex-direction:column}.price-line{align-items:flex-start;flex-direction:column}}
+@media print{.nav .btn,.cta .btn{display:none}.section,.cta{padding:48px 0}.plan,.step,.ai-card{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header class="nav">
+<div class="container nav-in">
+<div class="brand"><span class="mark"></span><span>Forward Zone<small>Forward IA</small></span></div>
+<button class="btn" onclick="window.print()">Salvar em PDF</button>
+</div>
+</header>
+
+<main>
+<section class="hero">
+<div class="container hero-grid">
+<div>
+<div class="eyebrow">Proposta 023 • Forward IA para Laboratórios</div>
+<h1>Uma inteligência artificial trabalhando a <span>prospecção do laboratório no Instagram.</span></h1>
+<p class="lead">Estruturamos uma operação de social selling com IA para identificar dentistas do perfil ideal, interagir com eles, iniciar conversas de forma personalizada, responder dúvidas iniciais e aproximar o laboratório de novas oportunidades comerciais.</p>
+</div>
+<aside class="hero-side">
+<div class="kpi"><strong>10–20 contatos/dia</strong><span>cadência de mensagens configurada para prospecção</span></div>
+<div class="kpi"><strong>Perfil ideal</strong><span>especialidade, região e tipo de clínica definidos junto ao laboratório</span></div>
+<div class="kpi"><strong>IA treinada</strong><span>tom de voz, serviços e atendimento personalizados para a marca</span></div>
+</aside>
+</div>
+</section>
+
+<div class="container strip-grid">
+<div class="strip-item"><b>Interação</b><span>curtidas, stories e presença no perfil</span></div>
+<div class="strip-item"><b>Prospecção</b><span>abordagem de dentistas no Direct</span></div>
+<div class="strip-item"><b>Qualificação</b><span>conversa antes da passagem comercial</span></div>
+<div class="strip-item"><b>Personalização</b><span>IA treinada para o laboratório</span></div>
+</div>
+
+<section class="section">
+<div class="container">
+<div class="section-title">
+<div class="index"><b>01</b> / mecanismo</div>
+<div>
+<h2>Não é disparo em massa. É uma rotina de aproximação e conversa.</h2>
+<p>A operação é baseada em social selling: o sistema trabalha o perfil ideal de dentista, cria sinais de presença e inicia conversas contextualizadas, evitando uma abordagem fria de propaganda.</p>
+</div>
+</div>
+
+<div class="flow">
+<article class="step"><small>01 / encontrar</small><h3>Perfil ideal de dentista</h3><p>Definimos especialidade, cidade, tipo de clínica e outros critérios para orientar quem a IA deve priorizar.</p></article>
+<article class="step"><small>02 / interagir</small><h3>Presença no Instagram</h3><p>Interações com perfis de dentistas por meio de curtidas, visualizações de stories e comentários contextualizados.</p></article>
+<article class="step"><small>03 / conversar</small><h3>10 a 20 mensagens por dia</h3><p>Abordagens personalizadas no Direct, com tom natural e sem depender de texto idêntico para todo mundo.</p></article>
+<article class="step"><small>04 / qualificar</small><h3>Contato mais preparado</h3><p>A IA apresenta o laboratório, entende o interesse inicial e ajuda a levar a conversa até o ponto de entrada do comercial.</p></article>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="section-title">
+<div class="index"><b>02</b> / treinamento da IA</div>
+<div>
+<h2>A inteligência artificial aprende como o seu laboratório deve conversar.</h2>
+<p>A implementação inclui configuração do tom de voz, serviços, diferenciais, respostas frequentes e direcionamento comercial. O objetivo é tornar a interação coerente com a identidade do laboratório.</p>
+</div>
+</div>
+
+<div class="ai-grid">
+<article class="ai-card"><small>01 / marca</small><h3>Tom de voz personalizado</h3><p>Ajuste da linguagem da IA para evitar respostas genéricas e aproximar a comunicação do jeito real do laboratório.</p></article>
+<article class="ai-card"><small>02 / atendimento</small><h3>Serviços e dúvidas frequentes</h3><p>Treinamento com informações do laboratório para apresentar serviços, esclarecer dúvidas iniciais e sustentar a conversa.</p></article>
+<article class="ai-card"><small>03 / comercial</small><h3>Passagem para fechamento</h3><p>Quando há interesse real, a conversa pode ser direcionada ao responsável comercial para continuidade e fechamento.</p></article>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="section-title">
+<div class="index"><b>03</b> / planos</div>
+<div>
+<h2>Duas formas de colocar a Forward IA para trabalhar o crescimento do laboratório.</h2>
+<p>O primeiro plano concentra toda a operação na prospecção orgânica e relacionamento via Instagram. O segundo mantém essa estrutura e adiciona mídia paga e produção de conteúdo com Avatar de IA ultra-realista.</p>
+</div>
+</div>
+
+<div class="compare">
+<article class="plan">
+<div>
+<div class="label">PLANO 01 / FORWARD IA</div>
+<h3>Prospecção Inteligente</h3>
+<p class="plan-desc">Para o laboratório que quer abrir novas conversas com dentistas por meio de uma rotina ativa de social selling e automação personalizada.</p>
+
+<div class="price-block">
+<div class="price-line primary"><span>Implementação + mês 1</span><strong>R$ 1.500,00</strong></div>
+<div class="price-line"><span>A partir do 2º mês</span><strong>R$ 997,00/mês</strong></div>
+</div>
+
+<div class="items">
+<div class="item"><span class="check">✓</span><span>Implementação da Forward IA no Instagram</span></div>
+<div class="item"><span class="check">✓</span><span>Definição do perfil ideal de dentista</span></div>
+<div class="item"><span class="check">✓</span><span>Treinamento da IA com tom de voz e informações do laboratório</span></div>
+<div class="item"><span class="check">✓</span><span>Interação com perfis de dentistas</span></div>
+<div class="item"><span class="check">✓</span><span>Comentários contextualizados em posts</span></div>
+<div class="item"><span class="check">✓</span><span>Curtidas e visualizações de stories</span></div>
+<div class="item"><span class="check">✓</span><span>Envio de aproximadamente 10 a 20 mensagens por dia</span></div>
+<div class="item"><span class="check">✓</span><span>Conversas personalizadas via Direct</span></div>
+<div class="item"><span class="check">✓</span><span>Apresentação dos serviços e respostas iniciais</span></div>
+<div class="item"><span class="check">✓</span><span>Qualificação e passagem de oportunidades para o comercial</span></div>
+</div>
+<div class="no-ads">SEM INVESTIMENTO EM TRÁFEGO PAGO NESTE PLANO.</div>
+</div>
+</article>
+
+<article class="plan featured">
+<div>
+<div class="badge">operação completa</div>
+<div class="label" style="margin-top:18px">PLANO 02 / FORWARD IA + GROWTH</div>
+<h3>IA + Tráfego + Avatar</h3>
+<p class="plan-desc">Para o laboratório que quer combinar prospecção ativa, distribuição paga e produção recorrente de conteúdo com uma presença digital mais robusta.</p>
+
+<div class="price-block">
+<div class="price-line primary"><span>Implementação + mês 1</span><strong>R$ 2.000,00</strong></div>
+<div class="price-line"><span>A partir do 2º mês</span><strong>R$ 1.700,00/mês</strong></div>
+</div>
+
+<div class="items">
+<div class="item"><span class="check">✓</span><span><strong>Tudo do Plano Forward IA</strong></span></div>
+<div class="item"><span class="check">✓</span><span>Planejamento de campanhas de tráfego pago</span></div>
+<div class="item"><span class="check">✓</span><span>Criação, configuração e gestão das campanhas</span></div>
+<div class="item"><span class="check">✓</span><span>Conteúdo estratégico para distribuição nas redes</span></div>
+<div class="item"><span class="check">✓</span><span>Criação de conteúdo com Avatar de IA ultra-realista</span></div>
+<div class="item"><span class="check">✓</span><span>Integração entre conteúdo, mídia paga e prospecção direta</span></div>
+<div class="item"><span class="check">✓</span><span>Acompanhamento de performance e ajustes de comunicação</span></div>
+</div>
+<div class="media">ESTE PLANO UTILIZA TRÁFEGO PAGO. A VERBA DE MÍDIA É SEPARADA DOS HONORÁRIOS E PAGA DIRETAMENTE À META PELO LABORATÓRIO.</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="highlight">
+<h3>Plano 1 gera presença ativa sem depender de anúncio. Plano 2 soma prospecção, conteúdo e mídia paga.</h3>
+<p>Nos dois casos, o centro da operação é construir um fluxo mais previsível de oportunidades. A diferença é que o segundo plano adiciona alcance pago e produção com Avatar de IA para ampliar a frequência e a distribuição da comunicação.</p>
+</div>
+</div>
+</section>
+
+<section class="cta">
+<div class="container">
+<div class="cta-box">
+<div class="eyebrow" style="color:#2c383d">Forward Zone • Proposta 023</div>
+<h2>Menos dependência de indicação. Mais conversas iniciadas pelo próprio laboratório.</h2>
+<button class="btn btn-primary" onclick="window.print()">Salvar proposta</button>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container footer-in">
+<div><strong style="color:#aeb9bd">Forward Zone</strong> — Forward IA</div>
+<div>Proposta 023 • <span id="year"></span></div>
+</div>
+</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>
